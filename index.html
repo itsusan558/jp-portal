@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本語ツール集｜JP Tools Portal</title>
+<meta name="description" content="日本で暮らす人のための無料ウェブツール集。文字数カウント、手取り計算、全角半角変換、ゴミ分別ナビなど。すべてブラウザ完結・データ送信なし。">
+<meta property="og:title" content="日本語ツール集｜JP Tools Portal">
+<meta property="og:description" content="日本で暮らす人のための無料ウェブツール集。すべてブラウザ完結・データ送信なし。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇯🇵</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f9fb;--card:#fff;--text:#111827;--text2:#4b5563;--text3:#9ca3af;
+  --accent:#2563eb;--accent-d:#1d4ed8;--accent-l:#dbeafe;--accent-xl:#eff6ff;
+  --border:#e5e7eb;--shadow:0 1px 3px rgba(0,0,0,0.06);--shadow-md:0 4px 12px rgba(0,0,0,0.08);--shadow-lg:0 8px 25px rgba(0,0,0,0.1);
+  --r:16px;--font:'Noto Sans JP',-apple-system,'Segoe UI',sans-serif;
+  --ease:0.3s cubic-bezier(0.4,0,0.2,1)
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 50%,#60a5fa 100%);color:#fff;padding:60px 20px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
+.hero::after{content:'';position:absolute;bottom:-40%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);border-radius:50%}
+.hero *{position:relative;z-index:1}
+.hero-flag{font-size:52px;margin-bottom:12px;display:block}
+.hero h1{font-size:36px;font-weight:900;letter-spacing:-0.5px;margin-bottom:8px}
+.hero p{font-size:16px;opacity:0.9;max-width:500px;margin:0 auto;line-height:1.8}
+.hero-badges{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600}
+
+/* Container */
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+
+/* Stats */
+.stats-bar{margin:-36px auto 0;max-width:700px;padding:0 20px;position:relative;z-index:10}
+.stats-inner{display:grid;grid-template-columns:repeat(3,1fr);background:var(--card);border-radius:var(--r);box-shadow:var(--shadow-lg);overflow:hidden}
+.stat{text-align:center;padding:24px 16px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat .s-num{font-size:32px;font-weight:900;color:var(--accent)}
+.stat .s-label{font-size:12px;color:var(--text2);margin-top:2px}
+
+/* Section */
+.section{margin-top:48px}
+.section-head{text-align:center;margin-bottom:28px}
+.section-head h2{font-size:24px;font-weight:800}
+.section-head p{color:var(--text2);font-size:14px;margin-top:4px}
+
+/* Tool Cards */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.tool-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all var(--ease);box-shadow:var(--shadow);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.tool-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
+.tc-header{padding:24px 24px 0;display:flex;align-items:flex-start;gap:14px}
+.tc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.tc-meta{flex:1;min-width:0}
+.tc-title{font-size:18px;font-weight:800;line-height:1.3}
+.tc-subtitle{font-size:12px;color:var(--text3);margin-top:2px}
+.tc-body{padding:14px 24px 0;flex:1}
+.tc-desc{font-size:13px;color:var(--text2);line-height:1.8}
+.tc-tags{display:flex;flex-wrap:wrap;gap:6px;padding:14px 24px 20px}
+.tc-tag{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:500;color:var(--text2)}
+.tc-footer{padding:12px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text3)}
+.tc-link{color:var(--accent);font-weight:600;display:flex;align-items:center;gap:4px}
+.tc-link svg{width:14px;height:14px}
+
+/* Color variants */
+.tc-green .tc-icon{background:#dcfce7;color:#16a34a}
+.tc-red .tc-icon{background:#fee2e2;color:#dc2626}
+.tc-blue .tc-icon{background:#dbeafe;color:#2563eb}
+.tc-purple .tc-icon{background:#ede9fe;color:#7c3aed}
+.tc-emerald .tc-icon{background:#d1fae5;color:#059669}
+
+/* Coming Soon */
+.coming-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:20px}
+.coming-card{background:var(--card);border:1.5px dashed var(--border);border-radius:12px;padding:20px;text-align:center;opacity:0.7}
+.coming-card .cc-icon{font-size:32px;margin-bottom:8px;display:block}
+.coming-card .cc-name{font-size:14px;font-weight:700}
+.coming-card .cc-desc{font-size:11px;color:var(--text3);margin-top:4px}
+.coming-card .cc-badge{display:inline-block;background:var(--accent-l);color:var(--accent);font-size:10px;font-weight:700;padding:2px 10px;border-radius:100px;margin-top:8px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.feature{text-align:center;padding:24px 16px}
+.feature .f-icon{font-size:36px;margin-bottom:10px;display:block}
+.feature .f-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.feature .f-desc{font-size:12px;color:var(--text2);line-height:1.7}
+
+/* Footer */
+.footer{text-align:center;padding:48px 20px 24px;color:var(--text3);font-size:12px;line-height:2;border-top:1px solid var(--border);margin-top:48px}
+.footer a{color:var(--accent);text-decoration:none}
+
+/* Responsive */
+@media(max-width:640px){
+  .hero{padding:44px 16px 64px}
+  .hero h1{font-size:28px}
+  .stats-inner{grid-template-columns:repeat(3,1fr)}
+  .stat{padding:18px 12px}
+  .stat .s-num{font-size:24px}
+  .tools-grid{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr}
+  .coming-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.tool-card{animation:fadeUp 0.4s ease both}
+.tool-card:nth-child(1){animation-delay:0s}
+.tool-card:nth-child(2){animation-delay:0.08s}
+.tool-card:nth-child(3){animation-delay:0.16s}
+.tool-card:nth-child(4){animation-delay:0.24s}
+.tool-card:nth-child(5){animation-delay:0.32s}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="hero-flag">🇯🇵</span>
+  <h1>日本語ツール集</h1>
+  <p>日本で暮らす人のための無料ウェブツール。<br>すべてブラウザで完結。データは一切送信しません。</p>
+  <div class="hero-badges">
+    <span class="hero-badge">🔒 完全プライバシー</span>
+    <span class="hero-badge">📱 スマホ対応</span>
+    <span class="hero-badge">⚡ 登録不要</span>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="s-num">5</div><div class="s-label">公開中のツール</div></div>
+    <div class="stat"><div class="s-num">0円</div><div class="s-label">完全無料</div></div>
+    <div class="stat"><div class="s-num">0</div><div class="s-label">データ送信</div></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <div class="section-head">
+      <h2>公開中のツール</h2>
+      <p>すべて1つのHTMLファイルで動作。インストール不要。</p>
+    </div>
+
+    <div class="tools-grid">
+      <!-- もじカウント -->
+      <a href="https://mojicount-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header">
+          <div class="tc-icon">📝</div>
+          <div class="tc-meta">
+            <div class="tc-title">もじカウント</div>
+            <div class="tc-subtitle">文字数カウンター</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">X、note、はてなブログなど7つのSNS文字数制限に対応。ひらがな・カタカナ・漢字の内訳、Shift-JISバイト数、読了時間も一目でわかる。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">SNS文字数</span>
+          <span class="tc-tag">読了時間</span>
+          <span class="tc-tag">Shift-JIS</span>
+        </div>
+        <div class="tc-footer">
+          <span>v1.0.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 手取りシミュレーター -->
+      <a href="https://tedori-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header">
+          <div class="tc-icon">💰</div>
+          <div class="tc-meta">
+            <div class="tc-title">手取りシミュレーター</div>
+            <div class="tc-subtitle">年収から手取りを計算</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">年収を入力するだけで手取り額を即計算。健康保険、厚生年金、雇用保険、所得税、住民税の内訳をグラフで可視化。40歳以上の介護保険にも対応。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">社会保険</span>
+          <span class="tc-tag">所得税</span>
+          <span class="tc-tag">グラフ表示</span>
+        </div>
+        <div class="tc-footer">
+          <span>v1.0.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <!-- ゴミ分別ナビ -->
+      <a href="https://gomi-navi-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header">
+          <div class="tc-icon">♻️</div>
+          <div class="tc-meta">
+            <div class="tc-title">ゴミ分別ナビ</div>
+            <div class="tc-subtitle">これ何ゴミ？即判定</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">「これ何ゴミ？」品名を入れるだけ。400品目以上、8カテゴリに対応。東京23区・横浜・大阪など10都市の地域別ルールにも対応。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">400+品目</span>
+          <span class="tc-tag">10都市対応</span>
+          <span class="tc-tag">地域別ルール</span>
+        </div>
+        <div class="tc-footer">
+          <span>v2.1.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 全角半角変換 -->
+      <a href="https://zenkaku-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header">
+          <div class="tc-icon">🔄</div>
+          <div class="tc-meta">
+            <div class="tc-title">全角⇔半角変換</div>
+            <div class="tc-subtitle">ワンクリック変換</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">全角→半角、半角→全角をワンクリックで変換。英数字・カタカナ・記号に対応。変換箇所はハイライト表示で一目瞭然。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">英数字</span>
+          <span class="tc-tag">カタカナ</span>
+          <span class="tc-tag">差分表示</span>
+        </div>
+        <div class="tc-footer">
+          <span>v1.0.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <!-- JP Tools -->
+      <a href="https://jp-tools-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header">
+          <div class="tc-icon">🧰</div>
+          <div class="tc-meta">
+            <div class="tc-title">JP Tools</div>
+            <div class="tc-subtitle">7-in-1 日本語ツール</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">全角半角変換、元号西暦変換、JSONデエスケープ、文字数カウンター、敬語変換、電子印鑑メーカー、和色パレットの7ツールを1アプリに収録。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">7ツール</span>
+          <span class="tc-tag">元号変換</span>
+          <span class="tc-tag">電子印鑑</span>
+        </div>
+        <div class="tc-footer">
+          <span>v1.1.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Coming Soon -->
+  <div class="section">
+    <div class="section-head">
+      <h2>近日公開予定</h2>
+      <p>100個のツールを目指して毎日開発中</p>
+    </div>
+    <div class="coming-grid">
+      <div class="coming-card"><span class="cc-icon">📅</span><div class="cc-name">元号カレンダー</div><div class="cc-desc">和暦・西暦・干支を一覧表示</div><span class="cc-badge">開発中</span></div>
+      <div class="coming-card"><span class="cc-icon">🏠</span><div class="cc-name">住所フォーマッター</div><div class="cc-desc">郵便番号から自動入力</div><span class="cc-badge">開発中</span></div>
+      <div class="coming-card"><span class="cc-icon">🎌</span><div class="cc-name">敬語チェッカー</div><div class="cc-desc">ビジネスメールの敬語校正</div><span class="cc-badge">開発中</span></div>
+      <div class="coming-card"><span class="cc-icon">📊</span><div class="cc-name">確定申告計算機</div><div class="cc-desc">フリーランス向け税金計算</div><span class="cc-badge">開発中</span></div>
+      <div class="coming-card"><span class="cc-icon">🔢</span><div class="cc-name">漢数字変換</div><div class="cc-desc">算用数字⇔漢数字</div><span class="cc-badge">開発中</span></div>
+      <div class="coming-card"><span class="cc-icon">📐</span><div class="cc-name">単位変換（日本式）</div><div class="cc-desc">坪・畳・合・尺を計算</div><span class="cc-badge">開発中</span></div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="section">
+    <div class="section-head">
+      <h2>すべてのツールの共通設計</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <span class="f-icon">🔒</span>
+        <div class="f-title">プライバシー保護</div>
+        <div class="f-desc">入力データはブラウザ内で処理。サーバーに一切送信されません。安心して個人情報を含むデータも処理できます。</div>
+      </div>
+      <div class="feature">
+        <span class="f-icon">📱</span>
+        <div class="f-title">スマホ対応</div>
+        <div class="f-desc">PC・スマホ・タブレットすべてに最適化。いつでもどこでもサッと使えるレスポンシブ設計。</div>
+      </div>
+      <div class="feature">
+        <span class="f-icon">⚡</span>
+        <div class="f-title">インストール不要</div>
+        <div class="f-desc">URLを開くだけ。アカウント登録もアプリインストールも不要。完全無料で永久に使えます。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  日本語ツール集 v1.0.0<br>
+  すべてのツールはオープンソースです<br>
+  <a href="https://github.com/itsusan558">GitHub</a>
+</footer>
+
+</body>
+</html>
