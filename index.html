@@ -112,6 +112,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .tool-card:nth-child(3){animation-delay:0.16s}
 .tool-card:nth-child(4){animation-delay:0.24s}
 .tool-card:nth-child(5){animation-delay:0.32s}
+.tool-card:nth-child(6){animation-delay:0.40s}
+.tool-card:nth-child(7){animation-delay:0.48s}
+.tool-card:nth-child(8){animation-delay:0.56s}
 </style>
 </head>
 <body>
@@ -129,7 +132,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat"><div class="s-num">5</div><div class="s-label">公開中のツール</div></div>
+    <div class="stat"><div class="s-num">8</div><div class="s-label">公開中のツール</div></div>
     <div class="stat"><div class="s-num">0円</div><div class="s-label">完全無料</div></div>
     <div class="stat"><div class="s-num">0</div><div class="s-label">データ送信</div></div>
   </div>
@@ -257,6 +260,75 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
           <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
         </div>
       </a>
+
+      <!-- 元号カレンダー -->
+      <a href="https://gengo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header">
+          <div class="tc-icon">📅</div>
+          <div class="tc-meta">
+            <div class="tc-title">元号カレンダー</div>
+            <div class="tc-subtitle">和暦⇔西暦・年齢・干支</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">令和・平成・昭和・大正・明治と西暦を相互変換。年齢・干支・六十干支・曜日も一発表示。最近30年の早見表つき。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">5元号対応</span>
+          <span class="tc-tag">干支</span>
+          <span class="tc-tag">早見表</span>
+        </div>
+        <div class="tc-footer">
+          <span>v1.0.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <!-- パスワード生成器 -->
+      <a href="https://passgen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header">
+          <div class="tc-icon">🔐</div>
+          <div class="tc-meta">
+            <div class="tc-title">パスワード生成器</div>
+            <div class="tc-subtitle">安全なパスワード即生成</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">Web Crypto APIで暗号学的に安全なパスワードを生成。長さ4〜128文字、大文字・小文字・数字・記号を自由に組み合わせ。強度メーターつき。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">暗号学的安全</span>
+          <span class="tc-tag">強度判定</span>
+          <span class="tc-tag">カスタマイズ</span>
+        </div>
+        <div class="tc-footer">
+          <span>v1.0.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 漢数字変換 -->
+      <a href="https://kansuji-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header">
+          <div class="tc-icon">🔢</div>
+          <div class="tc-meta">
+            <div class="tc-title">漢数字変換</div>
+            <div class="tc-subtitle">算用数字⇔漢数字・大字</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p class="tc-desc">算用数字と漢数字を相互変換。位取り表記・大字（ご祝儀・契約書用）・並び表記の3形式に対応。16桁（9999兆）まで。</p>
+        </div>
+        <div class="tc-tags">
+          <span class="tc-tag">大字対応</span>
+          <span class="tc-tag">ご祝儀</span>
+          <span class="tc-tag">契約書</span>
+        </div>
+        <div class="tc-footer">
+          <span>v1.0.0</span>
+          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -267,12 +339,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       <p>100個のツールを目指して毎日開発中</p>
     </div>
     <div class="coming-grid">
-      <div class="coming-card"><span class="cc-icon">📅</span><div class="cc-name">元号カレンダー</div><div class="cc-desc">和暦・西暦・干支を一覧表示</div><span class="cc-badge">開発中</span></div>
       <div class="coming-card"><span class="cc-icon">🏠</span><div class="cc-name">住所フォーマッター</div><div class="cc-desc">郵便番号から自動入力</div><span class="cc-badge">開発中</span></div>
       <div class="coming-card"><span class="cc-icon">🎌</span><div class="cc-name">敬語チェッカー</div><div class="cc-desc">ビジネスメールの敬語校正</div><span class="cc-badge">開発中</span></div>
       <div class="coming-card"><span class="cc-icon">📊</span><div class="cc-name">確定申告計算機</div><div class="cc-desc">フリーランス向け税金計算</div><span class="cc-badge">開発中</span></div>
-      <div class="coming-card"><span class="cc-icon">🔢</span><div class="cc-name">漢数字変換</div><div class="cc-desc">算用数字⇔漢数字</div><span class="cc-badge">開発中</span></div>
       <div class="coming-card"><span class="cc-icon">📐</span><div class="cc-name">単位変換（日本式）</div><div class="cc-desc">坪・畳・合・尺を計算</div><span class="cc-badge">開発中</span></div>
+      <div class="coming-card"><span class="cc-icon">🎨</span><div class="cc-name">カラーコード変換</div><div class="cc-desc">HEX/RGB/HSL相互変換</div><span class="cc-badge">開発中</span></div>
+      <div class="coming-card"><span class="cc-icon">⏱️</span><div class="cc-name">ポモドーロタイマー</div><div class="cc-desc">集中力を高める25分タイマー</div><span class="cc-badge">開発中</span></div>
     </div>
   </div>
 
@@ -302,7 +374,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 </div>
 
 <footer class="footer">
-  日本語ツール集 v1.0.0<br>
+  日本語ツール集 v1.1.0<br>
   すべてのツールはオープンソースです<br>
   <a href="https://github.com/itsusan558">GitHub</a>
 </footer>
