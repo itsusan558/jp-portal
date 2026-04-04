@@ -4,117 +4,264 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日本語ツール集｜JP Tools Portal</title>
-<meta name="description" content="日本で暮らす人のための無料ウェブツール集。文字数カウント、手取り計算、全角半角変換、ゴミ分別ナビなど。すべてブラウザ完結・データ送信なし。">
+<meta name="description" content="日本で暮らす人のための無料ウェブツール集。187個のツールを公開中。すべてブラウザ完結・データ送信なし。">
 <meta property="og:title" content="日本語ツール集｜JP Tools Portal">
-<meta property="og:description" content="日本で暮らす人のための無料ウェブツール集。すべてブラウザ完結・データ送信なし。">
+<meta property="og:description" content="187個の無料ウェブツール公開中。すべてブラウザ完結・登録不要。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇯🇵</text></svg>">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f8f9fb;--card:#fff;--text:#111827;--text2:#4b5563;--text3:#9ca3af;
-  --accent:#2563eb;--accent-d:#1d4ed8;--accent-l:#dbeafe;--accent-xl:#eff6ff;
-  --border:#e5e7eb;--shadow:0 1px 3px rgba(0,0,0,0.06);--shadow-md:0 4px 12px rgba(0,0,0,0.08);--shadow-lg:0 8px 25px rgba(0,0,0,0.1);
-  --r:16px;--font:'Noto Sans JP',-apple-system,'Segoe UI',sans-serif;
-  --ease:0.3s cubic-bezier(0.4,0,0.2,1)
+  --bg:#f0f2f5;--card:#fff;--text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --accent:#3b82f6;--accent-d:#2563eb;--accent-l:#dbeafe;--accent-xl:#eff6ff;
+  --purple:#8b5cf6;--pink:#ec4899;--emerald:#10b981;
+  --border:rgba(0,0,0,0.06);--shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.06),0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg:0 12px 40px rgba(0,0,0,0.08),0 4px 12px rgba(0,0,0,0.04);
+  --shadow-xl:0 20px 60px rgba(0,0,0,0.1),0 8px 20px rgba(0,0,0,0.06);
+  --r:20px;--font:'Noto Sans JP','Inter',-apple-system,'Segoe UI',sans-serif;
+  --ease:0.35s cubic-bezier(0.4,0,0.2,1);--ease-bounce:0.5s cubic-bezier(0.34,1.56,0.64,1)
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;-webkit-font-smoothing:antialiased}
 
-/* Hero */
-.hero{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 50%,#60a5fa 100%);color:#fff;padding:60px 20px 80px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
-.hero::after{content:'';position:absolute;bottom:-40%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);border-radius:50%}
+/* ========== HERO ========== */
+.hero{
+  background:#0a0e27;color:#fff;padding:72px 20px 100px;text-align:center;position:relative;overflow:hidden
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%,rgba(59,130,246,0.3),transparent),
+    radial-gradient(ellipse 60% 60% at 80% 20%,rgba(139,92,246,0.25),transparent),
+    radial-gradient(ellipse 50% 40% at 50% 80%,rgba(236,72,153,0.15),transparent),
+    radial-gradient(ellipse 40% 30% at 70% 60%,rgba(16,185,129,0.1),transparent);
+  animation:auroraShift 8s ease-in-out infinite alternate
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+}
+@keyframes auroraShift{
+  0%{filter:hue-rotate(0deg) brightness(1)}
+  50%{filter:hue-rotate(15deg) brightness(1.1)}
+  100%{filter:hue-rotate(-10deg) brightness(1.05)}
+}
 .hero *{position:relative;z-index:1}
-.hero-flag{font-size:52px;margin-bottom:12px;display:block}
-.hero h1{font-size:36px;font-weight:900;letter-spacing:-0.5px;margin-bottom:8px}
-.hero p{font-size:16px;opacity:0.9;max-width:500px;margin:0 auto;line-height:1.8}
-.hero-badges{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600}
+.hero-flag{font-size:56px;margin-bottom:16px;display:block;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3))}
+.hero h1{font-size:42px;font-weight:900;letter-spacing:-1px;margin-bottom:10px;background:linear-gradient(135deg,#fff 0%,#c7d2fe 50%,#a5b4fc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;opacity:0.75;max-width:480px;margin:0 auto;line-height:1.9;font-weight:400}
+.hero-badges{display:flex;justify-content:center;gap:10px;margin-top:28px;flex-wrap:wrap}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding:10px 20px;border-radius:100px;font-size:13px;font-weight:600;
+  border:1px solid rgba(255,255,255,0.1);transition:all var(--ease)
+}
+.hero-badge:hover{background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.2);transform:translateY(-1px)}
 
-/* Container */
-.container{max-width:900px;margin:0 auto;padding:0 20px}
+/* ========== CONTAINER ========== */
+.container{max-width:960px;margin:0 auto;padding:0 24px}
 
-/* Stats */
-.stats-bar{margin:-36px auto 0;max-width:700px;padding:0 20px;position:relative;z-index:10}
-.stats-inner{display:grid;grid-template-columns:repeat(3,1fr);background:var(--card);border-radius:var(--r);box-shadow:var(--shadow-lg);overflow:hidden}
-.stat{text-align:center;padding:24px 16px;border-right:1px solid var(--border)}
-.stat:last-child{border-right:none}
-.stat .s-num{font-size:32px;font-weight:900;color:var(--accent)}
-.stat .s-label{font-size:12px;color:var(--text2);margin-top:2px}
+/* ========== STATS BAR ========== */
+.stats-bar{margin:-44px auto 0;max-width:720px;padding:0 24px;position:relative;z-index:10}
+.stats-inner{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-radius:var(--r);box-shadow:var(--shadow-xl);overflow:hidden;border:1px solid rgba(255,255,255,0.6)
+}
+.stat{text-align:center;padding:28px 16px;position:relative}
+.stat:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:linear-gradient(to bottom,transparent,var(--border),transparent)}
+.stat .s-num{font-size:36px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .s-label{font-size:12px;color:var(--text2);margin-top:4px;font-weight:500;letter-spacing:0.5px}
 
-/* Section */
-.section{margin-top:48px}
-.section-head{text-align:center;margin-bottom:28px}
-.section-head h2{font-size:24px;font-weight:800}
-.section-head p{color:var(--text2);font-size:14px;margin-top:4px}
+/* ========== FILTER BAR ========== */
+.filter-bar{display:flex;justify-content:center;gap:8px;margin-top:44px;flex-wrap:wrap;padding:0 24px}
+.filter-btn{
+  background:var(--card);border:1.5px solid var(--border);border-radius:100px;
+  padding:9px 22px;font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;
+  transition:all var(--ease);font-family:var(--font);position:relative;overflow:hidden
+}
+.filter-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--purple));opacity:0;transition:opacity var(--ease);border-radius:100px}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(59,130,246,0.1)}
+.filter-btn.active{border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(59,130,246,0.3)}
+.filter-btn.active::before{opacity:1}
+.filter-btn{position:relative;z-index:0}
+.filter-btn.active{z-index:0}
 
-/* Tool Cards */
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.tool-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all var(--ease);box-shadow:var(--shadow);text-decoration:none;color:inherit;display:flex;flex-direction:column}
-.tool-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
-.tc-header{padding:24px 24px 0;display:flex;align-items:flex-start;gap:14px}
-.tc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+/* ========== CATEGORIES ========== */
+.cat-section{margin-top:48px}
+.cat-label{font-size:15px;font-weight:800;color:var(--text);margin-bottom:20px;padding-left:4px;display:flex;align-items:center;gap:10px}
+.cat-label span{font-size:22px}
+
+/* ========== TOOL CARDS ========== */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.tool-card{
+  background:var(--card);border:1px solid rgba(0,0,0,0.05);border-radius:var(--r);
+  overflow:hidden;transition:all var(--ease);box-shadow:var(--shadow);
+  text-decoration:none;color:inherit;display:flex;flex-direction:column;
+  position:relative
+}
+.tool-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--purple));
+  opacity:0;transition:opacity var(--ease)
+}
+.tool-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:transparent}
+.tool-card:hover::before{opacity:1}
+.tc-header{padding:22px 22px 0;display:flex;align-items:flex-start;gap:14px}
+.tc-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;transition:transform var(--ease-bounce)}
+.tool-card:hover .tc-icon{transform:scale(1.1) rotate(-3deg)}
 .tc-meta{flex:1;min-width:0}
-.tc-title{font-size:18px;font-weight:800;line-height:1.3}
-.tc-subtitle{font-size:12px;color:var(--text3);margin-top:2px}
-.tc-body{padding:14px 24px 0;flex:1}
-.tc-desc{font-size:13px;color:var(--text2);line-height:1.8}
-.tc-tags{display:flex;flex-wrap:wrap;gap:6px;padding:14px 24px 20px}
-.tc-tag{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:500;color:var(--text2)}
-.tc-footer{padding:12px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text3)}
-.tc-link{color:var(--accent);font-weight:600;display:flex;align-items:center;gap:4px}
-.tc-link svg{width:14px;height:14px}
+.tc-title{font-size:16px;font-weight:800;line-height:1.3}
+.tc-subtitle{font-size:11px;color:var(--text3);margin-top:3px;font-weight:500}
+.tc-body{padding:12px 22px 0;flex:1}
+.tc-desc{font-size:12.5px;color:var(--text2);line-height:1.8;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tc-footer{padding:12px 22px;border-top:1px solid rgba(0,0,0,0.04);display:flex;justify-content:flex-end;font-size:12px;color:var(--text3);margin-top:auto}
+.tc-link{color:var(--accent);font-weight:700;display:flex;align-items:center;gap:4px;transition:gap var(--ease)}
+.tool-card:hover .tc-link{gap:8px;color:var(--purple)}
+.tc-link svg{width:14px;height:14px;transition:transform var(--ease)}
+.tool-card:hover .tc-link svg{transform:translate(2px,-2px)}
 
-/* Color variants */
-.tc-green .tc-icon{background:#dcfce7;color:#16a34a}
-.tc-red .tc-icon{background:#fee2e2;color:#dc2626}
-.tc-blue .tc-icon{background:#dbeafe;color:#2563eb}
-.tc-purple .tc-icon{background:#ede9fe;color:#7c3aed}
-.tc-emerald .tc-icon{background:#d1fae5;color:#059669}
+/* Card color variants */
+.tc-blue .tc-icon{background:linear-gradient(135deg,#dbeafe,#bfdbfe);color:#2563eb}
+.tc-green .tc-icon{background:linear-gradient(135deg,#dcfce7,#bbf7d0);color:#16a34a}
+.tc-red .tc-icon{background:linear-gradient(135deg,#fee2e2,#fecaca);color:#dc2626}
+.tc-purple .tc-icon{background:linear-gradient(135deg,#ede9fe,#ddd6fe);color:#7c3aed}
+.tc-emerald .tc-icon{background:linear-gradient(135deg,#d1fae5,#a7f3d0);color:#059669}
+.tc-orange .tc-icon{background:linear-gradient(135deg,#ffedd5,#fed7aa);color:#ea580c}
+.tc-rose .tc-icon{background:linear-gradient(135deg,#ffe4e6,#fecdd3);color:#e11d48}
+.tc-cyan .tc-icon{background:linear-gradient(135deg,#cffafe,#a5f3fc);color:#0891b2}
+.tc-amber .tc-icon{background:linear-gradient(135deg,#fef3c7,#fde68a);color:#d97706}
 
-/* Coming Soon */
-.coming-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:20px}
-.coming-card{background:var(--card);border:1.5px dashed var(--border);border-radius:12px;padding:20px;text-align:center;opacity:0.7}
-.coming-card .cc-icon{font-size:32px;margin-bottom:8px;display:block}
-.coming-card .cc-name{font-size:14px;font-weight:700}
-.coming-card .cc-desc{font-size:11px;color:var(--text3);margin-top:4px}
-.coming-card .cc-badge{display:inline-block;background:var(--accent-l);color:var(--accent);font-size:10px;font-weight:700;padding:2px 10px;border-radius:100px;margin-top:8px}
+/* Hover card accent per color */
+.tc-blue:hover::before{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+.tc-green:hover::before{background:linear-gradient(90deg,#16a34a,#4ade80)}
+.tc-red:hover::before{background:linear-gradient(90deg,#dc2626,#f87171)}
+.tc-purple:hover::before{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.tc-emerald:hover::before{background:linear-gradient(90deg,#059669,#34d399)}
+.tc-orange:hover::before{background:linear-gradient(90deg,#ea580c,#fb923c)}
+.tc-rose:hover::before{background:linear-gradient(90deg,#e11d48,#fb7185)}
+.tc-cyan:hover::before{background:linear-gradient(90deg,#0891b2,#22d3ee)}
+.tc-amber:hover::before{background:linear-gradient(90deg,#d97706,#fbbf24)}
+
+/* Coming soon */
+.coming-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:20px}
+.coming-card{background:var(--card);border:1.5px dashed rgba(0,0,0,0.08);border-radius:16px;padding:18px;text-align:center;opacity:0.7;transition:all var(--ease)}
+.coming-card:hover{opacity:1;transform:translateY(-2px)}
+.coming-card .cc-icon{font-size:28px;margin-bottom:6px;display:block}
+.coming-card .cc-name{font-size:13px;font-weight:700}
+.coming-card .cc-desc{font-size:11px;color:var(--text3);margin-top:2px}
+.coming-card .cc-badge{display:inline-block;background:var(--accent-l);color:var(--accent);font-size:10px;font-weight:700;padding:2px 10px;border-radius:100px;margin-top:6px}
+.coming-card .cc-badge.idea{background:#fef3c7;color:#d97706}
+.coming-sub{font-size:14px;font-weight:700;color:var(--text2);margin:24px 0 12px;padding-left:4px;display:flex;align-items:center;gap:8px}
+.coming-sub span{font-size:18px}
 
 /* Features */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-.feature{text-align:center;padding:24px 16px}
-.feature .f-icon{font-size:36px;margin-bottom:10px;display:block}
-.feature .f-title{font-size:15px;font-weight:700;margin-bottom:4px}
-.feature .f-desc{font-size:12px;color:var(--text2);line-height:1.7}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.feature{text-align:center;padding:28px 20px;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04);transition:all var(--ease)}
+.feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.feature .f-icon{font-size:40px;margin-bottom:12px;display:block}
+.feature .f-title{font-size:15px;font-weight:800;margin-bottom:6px}
+.feature .f-desc{font-size:12.5px;color:var(--text2);line-height:1.7}
 
 /* Footer */
-.footer{text-align:center;padding:48px 20px 24px;color:var(--text3);font-size:12px;line-height:2;border-top:1px solid var(--border);margin-top:48px}
-.footer a{color:var(--accent);text-decoration:none}
+.footer{text-align:center;padding:56px 24px 28px;color:var(--text3);font-size:12px;line-height:2;border-top:1px solid rgba(0,0,0,0.06);margin-top:56px}
+.footer a{color:var(--accent);text-decoration:none;font-weight:600;transition:color var(--ease)}
+.footer a:hover{color:var(--purple)}
 
-/* Responsive */
+/* Section */
+.section{margin-top:56px}
+.section-head{text-align:center;margin-bottom:32px}
+.section-head h2{font-size:26px;font-weight:900;background:linear-gradient(135deg,var(--text),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-head p{color:var(--text2);font-size:14px;margin-top:6px}
+
+/* ========== RESPONSIVE ========== */
 @media(max-width:640px){
-  .hero{padding:44px 16px 64px}
-  .hero h1{font-size:28px}
-  .stats-inner{grid-template-columns:repeat(3,1fr)}
-  .stat{padding:18px 12px}
-  .stat .s-num{font-size:24px}
+  .hero{padding:52px 16px 80px}.hero h1{font-size:30px}
+  .stat{padding:20px 12px}.stat .s-num{font-size:26px}
   .tools-grid{grid-template-columns:1fr}
   .features{grid-template-columns:1fr}
   .coming-grid{grid-template-columns:repeat(2,1fr)}
+  .filter-bar{gap:6px}.filter-btn{padding:7px 16px;font-size:12px}
 }
 
-/* Animation */
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.tool-card{animation:fadeUp 0.4s ease both}
-.tool-card:nth-child(1){animation-delay:0s}
-.tool-card:nth-child(2){animation-delay:0.08s}
-.tool-card:nth-child(3){animation-delay:0.16s}
-.tool-card:nth-child(4){animation-delay:0.24s}
-.tool-card:nth-child(5){animation-delay:0.32s}
-.tool-card:nth-child(6){animation-delay:0.40s}
-.tool-card:nth-child(7){animation-delay:0.48s}
-.tool-card:nth-child(8){animation-delay:0.56s}
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.tool-card{animation:fadeUp 0.5s ease both}
+.tools-grid .tool-card:nth-child(2){animation-delay:0.05s}
+.tools-grid .tool-card:nth-child(3){animation-delay:0.1s}
+.tools-grid .tool-card:nth-child(4){animation-delay:0.15s}
+.tools-grid .tool-card:nth-child(5){animation-delay:0.2s}
+.tools-grid .tool-card:nth-child(6){animation-delay:0.25s}
+
+/* ========== SEARCH BAR ========== */
+.search-wrap{max-width:520px;margin:28px auto 0;padding:0 20px;position:relative}
+.search-input{
+  width:100%;padding:15px 22px 15px 50px;
+  border:2px solid rgba(255,255,255,0.15);border-radius:100px;font-size:15px;font-family:var(--font);
+  background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  color:#fff;outline:none;transition:all var(--ease);box-shadow:0 4px 24px rgba(0,0,0,0.2)
+}
+.search-input:focus{border-color:rgba(255,255,255,0.35);box-shadow:0 4px 32px rgba(59,130,246,0.2);background:rgba(255,255,255,0.12)}
+.search-input::placeholder{color:rgba(255,255,255,0.4)}
+.search-icon{position:absolute;left:38px;top:50%;transform:translateY(-50%);font-size:18px;color:rgba(255,255,255,0.4);pointer-events:none}
+.search-clear{position:absolute;right:38px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;color:rgba(255,255,255,0.4);cursor:pointer;display:none;padding:4px}
+.search-count{text-align:center;font-size:12px;color:var(--text3);margin-top:8px;display:none}
+
+/* ========== SNS LINKS ========== */
+.sns-links{display:flex;justify-content:center;gap:12px;margin-top:20px}
+.sns-link{
+  display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:100px;
+  font-size:13px;font-weight:600;text-decoration:none;transition:all var(--ease);
+  border:1px solid rgba(255,255,255,0.15)
+}
+.sns-x{background:rgba(255,255,255,0.1);color:#fff}
+.sns-x:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.sns-note{background:rgba(65,201,180,0.2);color:#5edfc6;border-color:rgba(65,201,180,0.3)}
+.sns-note:hover{background:rgba(65,201,180,0.3);transform:translateY(-2px);box-shadow:0 4px 16px rgba(65,201,180,0.2)}
+
+/* ========== RANKING ========== */
+.ranking-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;margin-top:18px}
+.rank-badge{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.rank-1{background:linear-gradient(135deg,#fbbf24,#f59e0b)}
+.rank-2{background:linear-gradient(135deg,#9ca3af,#6b7280)}
+.rank-3{background:linear-gradient(135deg,#d97706,#b45309)}
+
+/* ========== REQUEST FAB ========== */
+.request-fab{position:fixed;bottom:24px;right:24px;z-index:50}
+.request-fab-btn{
+  background:linear-gradient(135deg,var(--accent),var(--purple));color:#fff;
+  border:none;border-radius:50px;padding:14px 24px;font-size:14px;font-weight:700;
+  cursor:pointer;box-shadow:0 8px 32px rgba(59,130,246,0.3);
+  display:flex;align-items:center;gap:8px;font-family:var(--font);transition:all var(--ease)
+}
+.request-fab-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(59,130,246,0.4)}
+.request-panel{
+  display:none;position:fixed;bottom:84px;right:24px;width:360px;max-width:calc(100vw - 40px);
+  background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-radius:var(--r);box-shadow:var(--shadow-xl);border:1px solid rgba(0,0,0,0.06);z-index:50;overflow:hidden
+}
+.request-panel.open{display:block;animation:fadeUp 0.3s ease}
+.rp-head{padding:18px 22px;border-bottom:1px solid rgba(0,0,0,0.06);font-weight:800;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.rp-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text3);padding:4px;transition:color var(--ease)}
+.rp-close:hover{color:var(--text)}
+.rp-body{padding:18px 22px}
+.rp-body textarea{width:100%;height:100px;border:1.5px solid rgba(0,0,0,0.08);border-radius:14px;padding:14px;font-size:13px;font-family:var(--font);resize:vertical;outline:none;transition:border-color var(--ease)}
+.rp-body textarea:focus{border-color:var(--accent)}
+.rp-body .rp-hint{font-size:11px;color:var(--text3);margin-top:8px}
+.rp-submit{
+  width:100%;padding:12px;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  color:#fff;border:none;border-radius:14px;font-size:14px;font-weight:700;
+  cursor:pointer;margin-top:12px;font-family:var(--font);transition:all var(--ease)
+}
+.rp-submit:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(59,130,246,0.3)}
+.rp-thanks{display:none;text-align:center;padding:24px;font-size:14px;color:var(--accent);font-weight:700}
+@media(max-width:640px){
+  .request-panel{right:10px;bottom:74px;width:calc(100vw - 20px)}
+  .ranking-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -128,256 +275,1265 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <span class="hero-badge">📱 スマホ対応</span>
     <span class="hero-badge">⚡ 登録不要</span>
   </div>
+  <div class="sns-links">
+    <a href="https://x.com/everevanev6601" target="_blank" class="sns-link sns-x">𝕏 フォロー</a>
+    <a href="https://note.com/tasty_mimosa406" target="_blank" class="sns-link sns-note">📝 note</a>
+  </div>
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="searchInput" placeholder="ツールを検索...（例：変換、計算、カレンダー）">
+    <button class="search-clear" id="searchClear">✕</button>
+  </div>
+  <div class="search-count" id="searchCount"></div>
 </div>
 
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat"><div class="s-num">8</div><div class="s-label">公開中のツール</div></div>
+    <div class="stat"><div class="s-num">187</div><div class="s-label">公開中のツール</div></div>
     <div class="stat"><div class="s-num">0円</div><div class="s-label">完全無料</div></div>
-    <div class="stat"><div class="s-num">0</div><div class="s-label">データ送信</div></div>
+    <div class="stat"><div class="s-num">1000</div><div class="s-label">目標ツール数</div></div>
   </div>
 </div>
 
+<div class="filter-bar">
+  <button class="filter-btn active" data-cat="all">すべて</button>
+  <button class="filter-btn" data-cat="text">テキスト・変換</button>
+  <button class="filter-btn" data-cat="life">生活・お金</button>
+  <button class="filter-btn" data-cat="health">健康</button>
+  <button class="filter-btn" data-cat="calc">計算・数学</button>
+  <button class="filter-btn" data-cat="culture">日本文化</button>
+  <button class="filter-btn" data-cat="living">暮らし・便利</button>
+  <button class="filter-btn" data-cat="util">ユーティリティ</button>
+  <button class="filter-btn" data-cat="entertain">エンタメ</button>
+  <button class="filter-btn" data-cat="knowledge">知識・まとめ</button>
+  <button class="filter-btn" data-cat="image">画像</button>
+  <button class="filter-btn" data-cat="biz">ビジネス</button>
+  <button class="filter-btn" data-cat="learn">学習</button>
+  <button class="filter-btn" data-cat="community">コミュニティ</button>
+</div>
+
 <div class="container">
-  <div class="section">
-    <div class="section-head">
-      <h2>公開中のツール</h2>
-      <p>すべて1つのHTMLファイルで動作。インストール不要。</p>
-    </div>
 
+  <!-- テキスト・変換 (4) -->
+  <div class="cat-section" data-cat-section="text">
+    <div class="cat-label"><span>📝</span> テキスト・変換</div>
     <div class="tools-grid">
-      <!-- もじカウント -->
       <a href="https://mojicount-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
-        <div class="tc-header">
-          <div class="tc-icon">📝</div>
-          <div class="tc-meta">
-            <div class="tc-title">もじカウント</div>
-            <div class="tc-subtitle">文字数カウンター</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">X、note、はてなブログなど7つのSNS文字数制限に対応。ひらがな・カタカナ・漢字の内訳、Shift-JISバイト数、読了時間も一目でわかる。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">SNS文字数</span>
-          <span class="tc-tag">読了時間</span>
-          <span class="tc-tag">Shift-JIS</span>
-        </div>
-        <div class="tc-footer">
-          <span>v1.0.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
+        <div class="tc-header"><div class="tc-icon">📝</div><div class="tc-meta"><div class="tc-title">もじカウント</div><div class="tc-subtitle">文字数カウンター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">7つのSNS文字数制限に対応。ひらがな・カタカナ・漢字の内訳、読了時間も表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
       </a>
-
-      <!-- 手取りシミュレーター -->
-      <a href="https://tedori-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
-        <div class="tc-header">
-          <div class="tc-icon">💰</div>
-          <div class="tc-meta">
-            <div class="tc-title">手取りシミュレーター</div>
-            <div class="tc-subtitle">年収から手取りを計算</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">年収を入力するだけで手取り額を即計算。健康保険、厚生年金、雇用保険、所得税、住民税の内訳をグラフで可視化。40歳以上の介護保険にも対応。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">社会保険</span>
-          <span class="tc-tag">所得税</span>
-          <span class="tc-tag">グラフ表示</span>
-        </div>
-        <div class="tc-footer">
-          <span>v1.0.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
-      </a>
-
-      <!-- ゴミ分別ナビ -->
-      <a href="https://gomi-navi-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
-        <div class="tc-header">
-          <div class="tc-icon">♻️</div>
-          <div class="tc-meta">
-            <div class="tc-title">ゴミ分別ナビ</div>
-            <div class="tc-subtitle">これ何ゴミ？即判定</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">「これ何ゴミ？」品名を入れるだけ。400品目以上、8カテゴリに対応。東京23区・横浜・大阪など10都市の地域別ルールにも対応。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">400+品目</span>
-          <span class="tc-tag">10都市対応</span>
-          <span class="tc-tag">地域別ルール</span>
-        </div>
-        <div class="tc-footer">
-          <span>v2.1.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
-      </a>
-
-      <!-- 全角半角変換 -->
       <a href="https://zenkaku-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
-        <div class="tc-header">
-          <div class="tc-icon">🔄</div>
-          <div class="tc-meta">
-            <div class="tc-title">全角⇔半角変換</div>
-            <div class="tc-subtitle">ワンクリック変換</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">全角→半角、半角→全角をワンクリックで変換。英数字・カタカナ・記号に対応。変換箇所はハイライト表示で一目瞭然。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">英数字</span>
-          <span class="tc-tag">カタカナ</span>
-          <span class="tc-tag">差分表示</span>
-        </div>
-        <div class="tc-footer">
-          <span>v1.0.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
+        <div class="tc-header"><div class="tc-icon">🔄</div><div class="tc-meta"><div class="tc-title">全角⇔半角変換</div><div class="tc-subtitle">ワンクリック変換</div></div></div>
+        <div class="tc-body"><p class="tc-desc">英数字・カタカナ・記号に対応。変換箇所はハイライト表示で一目瞭然。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
       </a>
-
-      <!-- JP Tools -->
       <a href="https://jp-tools-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
-        <div class="tc-header">
-          <div class="tc-icon">🧰</div>
-          <div class="tc-meta">
-            <div class="tc-title">JP Tools</div>
-            <div class="tc-subtitle">7-in-1 日本語ツール</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">全角半角変換、元号西暦変換、JSONデエスケープ、文字数カウンター、敬語変換、電子印鑑メーカー、和色パレットの7ツールを1アプリに収録。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">7ツール</span>
-          <span class="tc-tag">元号変換</span>
-          <span class="tc-tag">電子印鑑</span>
-        </div>
-        <div class="tc-footer">
-          <span>v1.1.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
+        <div class="tc-header"><div class="tc-icon">🧰</div><div class="tc-meta"><div class="tc-title">JP Tools</div><div class="tc-subtitle">7-in-1 日本語ツール</div></div></div>
+        <div class="tc-body"><p class="tc-desc">全角半角変換、元号変換、敬語変換、電子印鑑メーカー、和色パレットなど7ツール収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
       </a>
-
-      <!-- 元号カレンダー -->
-      <a href="https://gengo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
-        <div class="tc-header">
-          <div class="tc-icon">📅</div>
-          <div class="tc-meta">
-            <div class="tc-title">元号カレンダー</div>
-            <div class="tc-subtitle">和暦⇔西暦・年齢・干支</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">令和・平成・昭和・大正・明治と西暦を相互変換。年齢・干支・六十干支・曜日も一発表示。最近30年の早見表つき。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">5元号対応</span>
-          <span class="tc-tag">干支</span>
-          <span class="tc-tag">早見表</span>
-        </div>
-        <div class="tc-footer">
-          <span>v1.0.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
-      </a>
-
-      <!-- パスワード生成器 -->
-      <a href="https://passgen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
-        <div class="tc-header">
-          <div class="tc-icon">🔐</div>
-          <div class="tc-meta">
-            <div class="tc-title">パスワード生成器</div>
-            <div class="tc-subtitle">安全なパスワード即生成</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">Web Crypto APIで暗号学的に安全なパスワードを生成。長さ4〜128文字、大文字・小文字・数字・記号を自由に組み合わせ。強度メーターつき。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">暗号学的安全</span>
-          <span class="tc-tag">強度判定</span>
-          <span class="tc-tag">カスタマイズ</span>
-        </div>
-        <div class="tc-footer">
-          <span>v1.0.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
-      </a>
-
-      <!-- 漢数字変換 -->
       <a href="https://kansuji-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
-        <div class="tc-header">
-          <div class="tc-icon">🔢</div>
-          <div class="tc-meta">
-            <div class="tc-title">漢数字変換</div>
-            <div class="tc-subtitle">算用数字⇔漢数字・大字</div>
-          </div>
-        </div>
-        <div class="tc-body">
-          <p class="tc-desc">算用数字と漢数字を相互変換。位取り表記・大字（ご祝儀・契約書用）・並び表記の3形式に対応。16桁（9999兆）まで。</p>
-        </div>
-        <div class="tc-tags">
-          <span class="tc-tag">大字対応</span>
-          <span class="tc-tag">ご祝儀</span>
-          <span class="tc-tag">契約書</span>
-        </div>
-        <div class="tc-footer">
-          <span>v1.0.0</span>
-          <span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
+        <div class="tc-header"><div class="tc-icon">🔢</div><div class="tc-meta"><div class="tc-title">漢数字変換</div><div class="tc-subtitle">算用数字⇔漢数字・大字</div></div></div>
+        <div class="tc-body"><p class="tc-desc">位取り表記・大字（ご祝儀・契約書用）・並び表記の3形式に対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://keigo-check-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🎌</div><div class="tc-meta"><div class="tc-title">敬語チェッカー</div><div class="tc-subtitle">ビジネスメール校正</div></div></div>
+        <div class="tc-body"><p class="tc-desc">メールの敬語をチェック。二重敬語・誤用を指摘して正しい表現を提案。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://furigana-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">📖</div><div class="tc-meta"><div class="tc-title">ふりがな付与</div><div class="tc-subtitle">漢字にふりがな自動付与</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキスト中の漢字にふりがなを自動付与。ルビ付きHTML対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kousei-check-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">✏️</div><div class="tc-meta"><div class="tc-title">文章校正チェッカー</div><div class="tc-subtitle">誤字脱字・表記ゆれ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">文章の冗長表現・重複表現・表記ゆれを検出。より良い表現を提案。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://tategaki-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">📜</div><div class="tc-meta"><div class="tc-title">縦書きプレビュー</div><div class="tc-subtitle">テキストを縦書き表示</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキストを縦書きでプレビュー。小説・俳句・手紙の仕上がり確認。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://md-preview-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">📝</div><div class="tc-meta"><div class="tc-title">Markdownプレビュー</div><div class="tc-subtitle">リアルタイム変換</div></div></div>
+        <div class="tc-body"><p class="tc-desc">Markdownをリアルタイムでプレビュー。GFM対応。HTMLエクスポート可能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://text-diff-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🔍</div><div class="tc-meta"><div class="tc-title">テキスト差分比較</div><div class="tc-subtitle">2つの文章の差分</div></div></div>
+        <div class="tc-body"><p class="tc-desc">2つのテキストを比較して差分をハイライト表示。追加・削除を色分け。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://date-text-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">📅</div><div class="tc-meta"><div class="tc-title">日付テキスト変換</div><div class="tc-subtitle">カレンダー→テキスト</div></div></div>
+        <div class="tc-body"><p class="tc-desc">日付をカレンダーから選んで「4月14日（金）18時〜19時」のようなテキストに変換。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://teikei-text-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">📋</div><div class="tc-meta"><div class="tc-title">定型文保存アプリ</div><div class="tc-subtitle">ワンタップでコピー</div></div></div>
+        <div class="tc-body"><p class="tc-desc">よく使うテキストをカテゴリ別に保存。ワンタップでクリップボードにコピー。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://diff-tool-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">🔎</div><div class="tc-meta"><div class="tc-title">差分比較ツール</div><div class="tc-subtitle">行・単語・文字単位</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキスト・表データの差分を3モードで比較。文字単位のハイライトとCSV出力対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://json-formatter-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">📋</div><div class="tc-meta"><div class="tc-title">JSON整形</div><div class="tc-subtitle">フォーマッター&バリデーター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">JSONの整形・圧縮・バリデーション。ツリービュー・パス表示・エラー検出対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://regex-tester-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🔤</div><div class="tc-meta"><div class="tc-title">正規表現テスター</div><div class="tc-subtitle">リアルタイムマッチ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">正規表現のリアルタイムテスト。マッチハイライト・フラグ設定・よく使うパターン集。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
       </a>
     </div>
   </div>
 
-  <!-- Coming Soon -->
-  <div class="section">
-    <div class="section-head">
-      <h2>近日公開予定</h2>
-      <p>100個のツールを目指して毎日開発中</p>
-    </div>
-    <div class="coming-grid">
-      <div class="coming-card"><span class="cc-icon">🏠</span><div class="cc-name">住所フォーマッター</div><div class="cc-desc">郵便番号から自動入力</div><span class="cc-badge">開発中</span></div>
-      <div class="coming-card"><span class="cc-icon">🎌</span><div class="cc-name">敬語チェッカー</div><div class="cc-desc">ビジネスメールの敬語校正</div><span class="cc-badge">開発中</span></div>
-      <div class="coming-card"><span class="cc-icon">📊</span><div class="cc-name">確定申告計算機</div><div class="cc-desc">フリーランス向け税金計算</div><span class="cc-badge">開発中</span></div>
-      <div class="coming-card"><span class="cc-icon">📐</span><div class="cc-name">単位変換（日本式）</div><div class="cc-desc">坪・畳・合・尺を計算</div><span class="cc-badge">開発中</span></div>
-      <div class="coming-card"><span class="cc-icon">🎨</span><div class="cc-name">カラーコード変換</div><div class="cc-desc">HEX/RGB/HSL相互変換</div><span class="cc-badge">開発中</span></div>
-      <div class="coming-card"><span class="cc-icon">⏱️</span><div class="cc-name">ポモドーロタイマー</div><div class="cc-desc">集中力を高める25分タイマー</div><span class="cc-badge">開発中</span></div>
+  <!-- 生活・お金 (3) -->
+  <div class="cat-section" data-cat-section="life">
+    <div class="cat-label"><span>💰</span> 生活・お金</div>
+    <div class="tools-grid">
+      <a href="https://tedori-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">💰</div><div class="tc-meta"><div class="tc-title">手取りシミュレーター</div><div class="tc-subtitle">年収から手取りを計算</div></div></div>
+        <div class="tc-body"><p class="tc-desc">健康保険、厚生年金、所得税、住民税の内訳をグラフで可視化。介護保険にも対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://gomi-navi-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">♻️</div><div class="tc-meta"><div class="tc-title">ゴミ分別ナビ</div><div class="tc-subtitle">これ何ゴミ？即判定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">400品目以上、8カテゴリ。東京23区・横浜・大阪など10都市の地域別ルールに対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://warikan-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🍻</div><div class="tc-meta"><div class="tc-title">割り勘計算機</div><div class="tc-subtitle">均等割り・傾斜配分</div></div></div>
+        <div class="tc-body"><p class="tc-desc">飲み会の割り勘を簡単計算。均等割り・傾斜配分・端数調整に対応。幹事の味方。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://furusato-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🏡</div><div class="tc-meta"><div class="tc-title">ふるさと納税計算機</div><div class="tc-subtitle">控除上限額シミュレーター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">年収と家族構成からふるさと納税の控除上限額を計算。自己負担2,000円の上限がわかる。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://loan-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">🏦</div><div class="tc-meta"><div class="tc-title">住宅ローン計算機</div><div class="tc-subtitle">月々の返済額シミュレーション</div></div></div>
+        <div class="tc-body"><p class="tc-desc">借入額・金利・返済期間から月々の返済額を計算。元利均等・元金均等に対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://kakutei-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">📊</div><div class="tc-meta"><div class="tc-title">確定申告計算機</div><div class="tc-subtitle">フリーランス向け税金計算</div></div></div>
+        <div class="tc-body"><p class="tc-desc">売上・経費・控除から所得税・住民税・事業税を計算。青色申告65万円控除対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://yachin-check-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🏢</div><div class="tc-meta"><div class="tc-title">家賃相場チェッカー</div><div class="tc-subtitle">エリア別の家賃目安</div></div></div>
+        <div class="tc-body"><p class="tc-desc">東京23区・大阪・名古屋など主要都市の間取り別家賃相場を一覧表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://denki-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">💡</div><div class="tc-meta"><div class="tc-title">電気代シミュレーター</div><div class="tc-subtitle">家電ごとの電気代計算</div></div></div>
+        <div class="tc-body"><p class="tc-desc">家電の消費電力と使用時間から月間の電気代を計算。節約のコツも。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://nenkin-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">👴</div><div class="tc-meta"><div class="tc-title">年金受給額シミュレーター</div><div class="tc-subtitle">将来の年金額を試算</div></div></div>
+        <div class="tc-body"><p class="tc-desc">加入期間・収入から基礎年金・厚生年金の受給額を試算。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://expense-tracker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">💰</div><div class="tc-meta"><div class="tc-title">支出トラッカー</div><div class="tc-subtitle">毎日の収支管理</div></div></div>
+        <div class="tc-body"><p class="tc-desc">カテゴリ別の収支記録。月別チャート・取引一覧・残高計算をブラウザ内で完結。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
     </div>
   </div>
+
+  <!-- 健康 (4) -->
+  <div class="cat-section" data-cat-section="health">
+    <div class="cat-label"><span>🏥</span> 健康</div>
+    <div class="tools-grid">
+      <a href="https://sti-test-finder-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">🔬</div><div class="tc-meta"><div class="tc-title">性病検査ナビ</div><div class="tc-subtitle">全国の検査場を探す</div></div></div>
+        <div class="tc-body"><p class="tc-desc">全国の保健所・クリニックの性病検査情報を検索。無料検査・匿名検査の絞り込み対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://health-stories-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">📖</div><div class="tc-meta"><div class="tc-title">みんなの体験談</div><div class="tc-subtitle">闘病体験談を検索</div></div></div>
+        <div class="tc-body"><p class="tc-desc">同じ病気と向き合った人たちの声を集約。体験談・克服法・リハビリ情報をまとめて表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://workout-tracker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">💪</div><div class="tc-meta"><div class="tc-title">筋トレトラッカー</div><div class="tc-subtitle">トレーニング記録・管理</div></div></div>
+        <div class="tc-body"><p class="tc-desc">カレンダー表示、部位別ボリューム分析、最大重量グラフ、目標設定、RESTタイマー。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://bmi-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">⚖️</div><div class="tc-meta"><div class="tc-title">BMI計算機</div><div class="tc-subtitle">肥満度チェック</div></div></div>
+        <div class="tc-body"><p class="tc-desc">身長と体重からBMI・適正体重を計算。日本肥満学会の基準で判定。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://calorie-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🍱</div><div class="tc-meta"><div class="tc-title">カロリー計算機</div><div class="tc-subtitle">食事のカロリー検索</div></div></div>
+        <div class="tc-body"><p class="tc-desc">500品目以上の食品・料理のカロリーを検索。1日の摂取目安も表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://sleep-score-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">😴</div><div class="tc-meta"><div class="tc-title">睡眠スコア計算</div><div class="tc-subtitle">睡眠の質チェック</div></div></div>
+        <div class="tc-body"><p class="tc-desc">就寝・起床時間と睡眠の質からスコアを算出。改善アドバイス付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://stretch-timer-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🧘</div><div class="tc-meta"><div class="tc-title">ストレッチタイマー</div><div class="tc-subtitle">デスクワーク向け</div></div></div>
+        <div class="tc-body"><p class="tc-desc">定期的にストレッチを提案。肩こり・腰痛予防の動きをガイド。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://breathing-app-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🧘</div><div class="tc-meta"><div class="tc-title">呼吸エクササイズ</div><div class="tc-subtitle">リラックス呼吸法</div></div></div>
+        <div class="tc-body"><p class="tc-desc">4-7-8呼吸・ボックス呼吸など5種類。アニメーション付きガイドでリラックス。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://noise-level-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🔊</div><div class="tc-meta"><div class="tc-title">騒音レベルメーター</div><div class="tc-subtitle">マイクでdB測定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">マイクで周囲の騒音レベルを測定。リアルタイム波形表示・最小/平均/最大値記録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 計算・数学 (4) -->
+  <div class="cat-section" data-cat-section="calc">
+    <div class="cat-label"><span>🧮</span> 計算・数学</div>
+    <div class="tools-grid">
+      <a href="https://tax-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🧾</div><div class="tc-meta"><div class="tc-title">消費税計算機</div><div class="tc-subtitle">税込⇔税抜き変換</div></div></div>
+        <div class="tc-body"><p class="tc-desc">8%軽減税率・10%標準税率に対応。税込→税抜きの逆算も可能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://percent-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">%</div><div class="tc-meta"><div class="tc-title">パーセント計算</div><div class="tc-subtitle">割合・増減率・割引</div></div></div>
+        <div class="tc-body"><p class="tc-desc">よく使う4パターン：AのB%、AはBの何%、増減率、割引計算をサクッと。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://date-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">📅</div><div class="tc-meta"><div class="tc-title">日付計算</div><div class="tc-subtitle">日数差・N日後を計算</div></div></div>
+        <div class="tc-body"><p class="tc-desc">2つの日付の差（日・週・月・年）を計算。N日後/N日前の日付と曜日も。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://area-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">📐</div><div class="tc-meta"><div class="tc-title">面積計算機</div><div class="tc-subtitle">7種類の図形に対応</div></div></div>
+        <div class="tc-body"><p class="tc-desc">四角形・三角形・円・台形・楕円の面積を計算。坪・畳・アールへの変換付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 日本文化 (2) -->
+  <div class="cat-section" data-cat-section="culture">
+    <div class="cat-label"><span>🎌</span> 日本文化</div>
+    <div class="tools-grid">
+      <a href="https://gengo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">📅</div><div class="tc-meta"><div class="tc-title">元号カレンダー</div><div class="tc-subtitle">和暦⇔西暦・年齢・干支</div></div></div>
+        <div class="tc-body"><p class="tc-desc">令和〜明治の5元号と西暦を相互変換。年齢・干支・曜日も一発表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kansha-map-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">🗾</div><div class="tc-meta"><div class="tc-title">感謝マップ</div><div class="tc-subtitle">日本中の「ありがとう」を地図で</div></div></div>
+        <div class="tc-body"><p class="tc-desc">日常の感謝を都道府県別に共有。あなたの「ありがとう」を地図に載せよう。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://rokuyo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">📆</div><div class="tc-meta"><div class="tc-title">六曜カレンダー</div><div class="tc-subtitle">大安・仏滅・友引を確認</div></div></div>
+        <div class="tc-body"><p class="tc-desc">今日の六曜をすぐ確認。月間カレンダーで大安・仏滅・友引を一覧表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://goshugi-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">💒</div><div class="tc-meta"><div class="tc-title">ご祝儀相場</div><div class="tc-subtitle">関係性別の金額目安</div></div></div>
+        <div class="tc-body"><p class="tc-desc">結婚式のご祝儀、出産・入学祝いの相場を関係性別に一覧表示。マナー解説つき。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://koden-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🕯️</div><div class="tc-meta"><div class="tc-title">香典相場</div><div class="tc-subtitle">関係性別の金額目安</div></div></div>
+        <div class="tc-body"><p class="tc-desc">お葬式・法事の香典相場を関係性別に表示。表書き・マナー・NGルールも解説。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://yakudoshi-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">⛩️</div><div class="tc-meta"><div class="tc-title">厄年チェッカー</div><div class="tc-subtitle">生年月日から厄年判定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">生年月日から前厄・本厄・後厄を判定。男女別の厄年一覧と厄除けの情報も。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://nijushi-sekki-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🌸</div><div class="tc-meta"><div class="tc-title">二十四節気カレンダー</div><div class="tc-subtitle">季節の変わり目</div></div></div>
+        <div class="tc-body"><p class="tc-desc">立春・啓蟄・春分など二十四節気の日付と意味を表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://shukujitsu-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🎌</div><div class="tc-meta"><div class="tc-title">日本の祝日一覧</div><div class="tc-subtitle">年間の祝日を表示</div></div></div>
+        <div class="tc-body"><p class="tc-desc">年間の祝日を一覧表示。振替休日の計算済み。来年分も対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 暮らし・便利 (3) -->
+  <div class="cat-section" data-cat-section="living">
+    <div class="cat-label"><span>🏠</span> 暮らし・便利</div>
+    <div class="tools-grid">
+      <a href="https://cooking-units-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🥄</div><div class="tc-meta"><div class="tc-title">料理単位変換</div><div class="tc-subtitle">大さじ小さじ⇔ml/g</div></div></div>
+        <div class="tc-body"><p class="tc-desc">調味料別の大さじ・小さじ・カップ⇔ml/g変換。12種の調味料に対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://size-converter-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">👗</div><div class="tc-meta"><div class="tc-title">服のサイズ変換</div><div class="tc-subtitle">US/UK/EU⇔日本</div></div></div>
+        <div class="tc-body"><p class="tc-desc">海外通販に便利。トップス・靴・パンツのサイズをメンズ・レディース別に変換。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://us-jp-units-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🇺🇸</div><div class="tc-meta"><div class="tc-title">アメリカ⇔日本 単位変換</div><div class="tc-subtitle">マイル/ポンド/華氏</div></div></div>
+        <div class="tc-body"><p class="tc-desc">温度・距離・重さ・容量・面積を一発変換。身長・ガロン・平方フィートも。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://laundry-guide-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">👕</div><div class="tc-meta"><div class="tc-title">洗濯表示ガイド</div><div class="tc-subtitle">マークの意味を解説</div></div></div>
+        <div class="tc-body"><p class="tc-desc">新JIS洗濯表示マークの意味をイラスト付きで解説。洗い方・乾燥・アイロンまで網羅。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://bosai-checklist-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🆘</div><div class="tc-meta"><div class="tc-title">防災チェックリスト</div><div class="tc-subtitle">備蓄品・非常持出袋</div></div></div>
+        <div class="tc-body"><p class="tc-desc">地震・台風に備える備蓄品・非常持出袋のチェックリスト。家族人数別の目安も。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://takuhai-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">📦</div><div class="tc-meta"><div class="tc-title">宅配便サイズ計算</div><div class="tc-subtitle">3辺合計から料金目安</div></div></div>
+        <div class="tc-body"><p class="tc-desc">縦・横・高さを入力して宅配便のサイズ区分と料金目安を表示。ヤマト・佐川・ゆうパック対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://address-format-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🏠</div><div class="tc-meta"><div class="tc-title">住所フォーマッター</div><div class="tc-subtitle">郵便番号→住所自動入力</div></div></div>
+        <div class="tc-body"><p class="tc-desc">郵便番号を入力するだけで住所を自動補完。主要都市対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://jp-units-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">📐</div><div class="tc-meta"><div class="tc-title">日本式単位変換</div><div class="tc-subtitle">坪・畳・合・尺</div></div></div>
+        <div class="tc-body"><p class="tc-desc">坪・畳・合・升・尺など日本の伝統単位をメートル法に相互変換。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ユーティリティ (4) -->
+  <div class="cat-section" data-cat-section="util">
+    <div class="cat-label"><span>🔧</span> ユーティリティ</div>
+    <div class="tools-grid">
+      <a href="https://passgen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🔐</div><div class="tc-meta"><div class="tc-title">パスワード生成器</div><div class="tc-subtitle">安全なパスワード即生成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">Web Crypto APIで暗号学的に安全なパスワード。長さ・文字種カスタマイズ、強度メーター付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://novel-reader-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🔊</div><div class="tc-meta"><div class="tc-title">小説朗読</div><div class="tc-subtitle">テキスト音声読み上げ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">Google Cloud TTSで自然な音声読み上げ。複数の声・トーン・スピード調整可能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://base-converter-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">💻</div><div class="tc-meta"><div class="tc-title">進数変換</div><div class="tc-subtitle">2/8/10/16進数</div></div></div>
+        <div class="tc-body"><p class="tc-desc">2進数・8進数・10進数・16進数をリアルタイム相互変換。ビット表示付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://timezone-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">🌍</div><div class="tc-meta"><div class="tc-title">時差計算</div><div class="tc-subtitle">世界の現地時刻</div></div></div>
+        <div class="tc-body"><p class="tc-desc">12都市の現地時刻をリアルタイム表示。昼夜の区別、任意の時刻変換にも対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://qr-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">📱</div><div class="tc-meta"><div class="tc-title">QRコード生成</div><div class="tc-subtitle">テキスト・URLからQR作成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキストやURLを入力してQRコードを即生成。PNG/SVGダウンロード対応。色カスタマイズも。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://pomodoro-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">⏱️</div><div class="tc-meta"><div class="tc-title">ポモドーロタイマー</div><div class="tc-subtitle">25分集中+5分休憩</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ポモドーロ・テクニックの集中タイマー。セッション数カウント付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://color-convert-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🎨</div><div class="tc-meta"><div class="tc-title">カラーコード変換</div><div class="tc-subtitle">HEX/RGB相互変換</div></div></div>
+        <div class="tc-body"><p class="tc-desc">HEX・RGBを相互変換。カラーピッカー・コピー機能付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://password-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🔑</div><div class="tc-meta"><div class="tc-title">パスワード生成</div><div class="tc-subtitle">安全なパスワード作成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">暗号学的に安全なパスワードを生成。長さ・文字種選択、強度メーター、一括生成対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://unit-converter-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">📐</div><div class="tc-meta"><div class="tc-title">単位変換</div><div class="tc-subtitle">長さ・重さ・温度…</div></div></div>
+        <div class="tc-body"><p class="tc-desc">7カテゴリの単位変換。長さ・重さ・温度・速度・面積・体積・データ容量。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://countdown-timer-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">⏱️</div><div class="tc-meta"><div class="tc-title">カウントダウン</div><div class="tc-subtitle">目標日までの残り時間</div></div></div>
+        <div class="tc-body"><p class="tc-desc">イベントまでのカウントダウン。日・時・分・秒をリアルタイム表示。複数イベント管理。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://screen-ruler-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">📏</div><div class="tc-meta"><div class="tc-title">画面定規</div><div class="tc-subtitle">ピクセル計測ツール</div></div></div>
+        <div class="tc-body"><p class="tc-desc">画面上でピクセル距離を計測。直線・矩形・円・水平/垂直定規の5モード。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://random-picker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🎲</div><div class="tc-meta"><div class="tc-title">ランダムピッカー</div><div class="tc-subtitle">リストからランダム選択</div></div></div>
+        <div class="tc-body"><p class="tc-desc">リスト・数字範囲・チーム分け・順番決め。プリセット付きのランダム選択ツール。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://qr-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">📱</div><div class="tc-meta"><div class="tc-title">QRコード生成</div><div class="tc-subtitle">テキスト・URLをQR化</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキスト・URL・Wi-Fi・連絡先をQRコードに変換。色・サイズ変更、PNG保存。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- エンタメ (48) -->
+  <div class="cat-section" data-cat-section="entertain">
+    <div class="cat-label"><span>🎭</span> エンタメ</div>
+    <div class="tools-grid">
+      <a href="https://hantai-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🙅</div><div class="tc-meta"><div class="tc-title">全反対サイト</div><div class="tc-subtitle">何を言っても反対</div></div></div>
+        <div class="tc-body"><p class="tc-desc">どんな意見にも全力で反対。15パターンの反論ロジック。議論の練習にも。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kaibun-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🔄</div><div class="tc-meta"><div class="tc-title">回文ジェネレーター</div><div class="tc-subtitle">回文チェック&名作集</div></div></div>
+        <div class="tc-body"><p class="tc-desc">入力テキストが回文かチェック。日本語の名作回文100以上収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://black-joke-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">😈</div><div class="tc-meta"><div class="tc-title">ブラックジョーク生成</div><div class="tc-subtitle">毒の効いたユーモア</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ブリティッシュ風の皮肉からダークユーモアまで。カテゴリ別に収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://jojo-editor-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">⭐</div><div class="tc-meta"><div class="tc-title">ジョジョ妨害エディタ</div><div class="tc-subtitle">スタンドが文章を邪魔</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ザ・ワールドでフリーズ、バイツァダストで巻き戻し。スタンド能力が文章を妨害。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://socrates-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🏛️</div><div class="tc-meta"><div class="tc-title">ソクラテス反論</div><div class="tc-subtitle">哲学者が問いかける</div></div></div>
+        <div class="tc-body"><p class="tc-desc">あなたの主張をソクラテスが問答法で反論。思考を深める哲学的対話。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://hiroyuki-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">💬</div><div class="tc-meta"><div class="tc-title">ひろゆき反論</div><div class="tc-subtitle">それってあなたの感想ですよね</div></div></div>
+        <div class="tc-body"><p class="tc-desc">主張にひろゆき風に反論。論破風ジェネレーター。エンタメ目的のジョークサイト。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://suihei-quiz-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🧩</div><div class="tc-meta"><div class="tc-title">水平思考クイズ</div><div class="tc-subtitle">ウミガメのスープ系</div></div></div>
+        <div class="tc-body"><p class="tc-desc">発想力を試す水平思考クイズ。ヒント付きで段階的に解ける。20問収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://karaoke-shindan-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🎤</div><div class="tc-meta"><div class="tc-title">カラオケ曲診断</div><div class="tc-subtitle">おすすめ曲を提案</div></div></div>
+        <div class="tc-body"><p class="tc-desc">5つの質問であなたにぴったりのカラオケ曲を提案。男女別50曲以上収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://birthday-uranai-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">🔮</div><div class="tc-meta"><div class="tc-title">誕生日占い</div><div class="tc-subtitle">星座・誕生石・ラッキーカラー</div></div></div>
+        <div class="tc-body"><p class="tc-desc">生年月日から星座・誕生石・ラッキーカラー・干支を表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://neko-bounce-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🐱</div><div class="tc-meta"><div class="tc-title">猫バウンス</div><div class="tc-subtitle">物理演算で猫が跳ねる</div></div></div>
+        <div class="tc-body"><p class="tc-desc">クリックで猫追加、スペースで猫の雨。物理演算で永遠に跳ね続ける猫たち。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kinyou-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">📅</div><div class="tc-meta"><div class="tc-title">今日金曜？</div><div class="tc-subtitle">金曜かどうかだけ判定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">今日が金曜日かどうかだけを全力で教えてくれるサイト。金曜は紙吹雪つき。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://zenbu-ok-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">✅</div><div class="tc-meta"><div class="tc-title">全部OKボタン</div><div class="tc-subtitle">押すと全部解決（嘘）</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ボタンを押すと問題が全部解決するプログレスバーが走る。もちろん何も起きない。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kyomu-sakebe-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">🕳️</div><div class="tc-meta"><div class="tc-title">虚無に叫べ</div><div class="tc-subtitle">叫びが虚空に消える</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキストを入力して叫ぶと文字がアニメーションで虚無に吸い込まれて消える。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://mienai-neko-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🔍</div><div class="tc-meta"><div class="tc-title">見えない猫を探せ</div><div class="tc-subtitle">音で探す透明猫</div></div></div>
+        <div class="tc-body"><p class="tc-desc">画面上の見えない猫をマウスで探す。近づくとインジケータが反応するホットコールドゲーム。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://toilet-paper-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">🧻</div><div class="tc-meta"><div class="tc-title">トイレットペーパー</div><div class="tc-subtitle">無限にスクロール</div></div></div>
+        <div class="tc-body"><p class="tc-desc">永遠に続くトイレットペーパーをスクロール。何メートル引っ張ったかカウント。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://ichi-masu-jirai-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">💣</div><div class="tc-meta"><div class="tc-title">1マス地雷</div><div class="tc-subtitle">確率50%の極限マインスイーパー</div></div></div>
+        <div class="tc-body"><p class="tc-desc">たった1マスのマインスイーパー。50%の確率で爆発。連勝記録を目指せ。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://mugen-shiba-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🐕</div><div class="tc-meta"><div class="tc-title">無限柴犬</div><div class="tc-subtitle">無限に伸びる柴犬</div></div></div>
+        <div class="tc-body"><p class="tc-desc">スクロールすると無限に伸びる柴犬の胴体。何メートルまで伸ばせるか挑戦。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://nandemo-dekiru-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🌀</div><div class="tc-meta"><div class="tc-title">何でもできる</div><div class="tc-subtitle">何でもできる（何も起きない）</div></div></div>
+        <div class="tc-body"><p class="tc-desc">壮大な演出の後に「何でもできる」と言われるが、実際には何も起きないサイト。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://onigiri-binta-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🍙</div><div class="tc-meta"><div class="tc-title">おにぎりビンタ</div><div class="tc-subtitle">おにぎりで顔をビンタ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">マウスでおにぎりを操作して顔にビンタ。コンボカウンターとスコア付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://abyss-stare-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">👁️</div><div class="tc-meta"><div class="tc-title">深淵を覗くとき</div><div class="tc-subtitle">ニーチェの名言を体験</div></div></div>
+        <div class="tc-body"><p class="tc-desc">深淵を覗くとき、深淵もまたこちらを覗いている。カメラ連動のインタラクティブ体験。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://beat-maker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🎛️</div><div class="tc-meta"><div class="tc-title">ビートメーカー</div><div class="tc-subtitle">パッド+シーケンサーで曲を作る</div></div></div>
+        <div class="tc-body"><p class="tc-desc">8パッド×16ステップのシーケンサー。TR-808、シンセ、Lo-Fi、EDMの4キット搭載。スペースで再生。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://sound-logo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🔊</div><div class="tc-meta"><div class="tc-title">サウンドロゴボード</div><div class="tc-subtitle">Netflix・Pornhub・THX等</div></div></div>
+        <div class="tc-body"><p class="tc-desc">Netflix、Pornhub、Intel、マクドナルドなど有名サウンドロゴ＋効果音35種をWeb Audioで再現。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kanpeki-en-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">⭕</div><div class="tc-meta"><div class="tc-title">完璧な円チャレンジ</div><div class="tc-subtitle">円を描いてスコア判定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">マウスで円を描くと完璧度をスコア判定。95%以上出せたら神。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://hacker-kibun-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">💻</div><div class="tc-meta"><div class="tc-title">ハッカー気分</div><div class="tc-subtitle">適当に打つとコードが出る</div></div></div>
+        <div class="tc-body"><p class="tc-desc">キーボードを叩くとハッカーみたいなコードが出現。Ctrl+AでACCESS GRANTED。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://mugen-uma-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🐴</div><div class="tc-meta"><div class="tc-title">無限馬</div><div class="tc-subtitle">脚が永遠に伸びる馬</div></div></div>
+        <div class="tc-body"><p class="tc-desc">スクロールすると無限に伸びる馬の脚。何メートルまで伸ばせるか。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://materu-ka-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">⏳</div><div class="tc-meta"><div class="tc-title">2分間何もするな</div><div class="tc-subtitle">動いたらリセット</div></div></div>
+        <div class="tc-body"><p class="tc-desc">2分間マウスもキーボードも触らずにいられるか？動いたらリセット。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://bongo-neko-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🥁</div><div class="tc-meta"><div class="tc-title">ボンゴ猫</div><div class="tc-subtitle">猫とボンゴでセッション</div></div></div>
+        <div class="tc-body"><p class="tc-desc">キーボードを叩くと猫がボンゴを演奏。左右交互でコンボ。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://neko-piano-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🎹</div><div class="tc-meta"><div class="tc-title">猫ピアノ</div><div class="tc-subtitle">猫の鳴き声でピアノ演奏</div></div></div>
+        <div class="tc-body"><p class="tc-desc">8つのキーでそれぞれ違う音程の猫の鳴き声が出るピアノ。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://akai-button-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🔴</div><div class="tc-meta"><div class="tc-title">赤いボタン</div><div class="tc-subtitle">押すなよ！絶対押すなよ！</div></div></div>
+        <div class="tc-body"><p class="tc-desc">「押すな」と書かれた赤いボタン。押すたびに反応が変わる。20段階以上。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://onigiri-clicker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🍙</div><div class="tc-meta"><div class="tc-title">おにぎりクリッカー</div><div class="tc-subtitle">クッキークリッカー風</div></div></div>
+        <div class="tc-body"><p class="tc-desc">おにぎりをクリックして量産。工場やロボットでオートメーション化。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://meigen-gacha-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">✨</div><div class="tc-meta"><div class="tc-title">名言ガチャ</div><div class="tc-subtitle">N〜URの名言を引く</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ガチャを回して名言をゲット。レアリティ付き。URは1%。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://moji-ame-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">🌧️</div><div class="tc-meta"><div class="tc-title">文字の雨</div><div class="tc-subtitle">マトリックス風カタカナ雨</div></div></div>
+        <div class="tc-body"><p class="tc-desc">カタカナと数字がマトリックス風に降り注ぐ。クリックで色が変わる。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://gunyagunya-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🐛</div><div class="tc-meta"><div class="tc-title">ぐにゃぐにゃ</div><div class="tc-subtitle">素早く動かすと暴走</div></div></div>
+        <div class="tc-body"><p class="tc-desc">マウスについてくるぐにゃぐにゃ生物。素早く動かすとサイケに暴走。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://dajare-hantei-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🎭</div><div class="tc-meta"><div class="tc-title">ダジャレ判定機</div><div class="tc-subtitle">あなたのダジャレを審査</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ダジャレを入力すると100点満点で判定。天才か寒いかが分かる。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://muda-timer-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">⏱️</div><div class="tc-meta"><div class="tc-title">無駄タイマー</div><div class="tc-subtitle">無駄にした時間を計測</div></div></div>
+        <div class="tc-body"><p class="tc-desc">このサイトで無駄にした時間をカウント。「この時間があれば...」と教えてくれる。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://suika-wari-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🍉</div><div class="tc-meta"><div class="tc-title">スイカ割り</div><div class="tc-subtitle">連打でスイカを割れ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">スイカをタップして割る。HP制で最少回数を目指せ。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://janken-ai-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">✊</div><div class="tc-meta"><div class="tc-title">じゃんけんAI</div><div class="tc-subtitle">癖を学習して予測</div></div></div>
+        <div class="tc-body"><p class="tc-desc">AIがあなたのじゃんけんの癖を学習して予測。勝てるか？</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://tenki-uso-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🌋</div><div class="tc-meta"><div class="tc-title">嘘天気予報</div><div class="tc-subtitle">一切信用するな</div></div></div>
+        <div class="tc-body"><p class="tc-desc">「サメ雨のち晴れ」「絶対零度」など絶対ありえない天気予報。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://mugen-button-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🔘</div><div class="tc-meta"><div class="tc-title">無限ボタン</div><div class="tc-subtitle">押すと増殖するボタン</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ボタンを押すとボタンが増える。増えたボタンも押せる。止められない。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://neko-tower-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🏗️</div><div class="tc-meta"><div class="tc-title">猫タワー</div><div class="tc-subtitle">猫を積み上げろ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">クリックで猫を落として積み上げる。何匹まで積めるか挑戦。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://moji-bakudan-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">💣</div><div class="tc-meta"><div class="tc-title">文字爆弾</div><div class="tc-subtitle">入力した文字が爆発</div></div></div>
+        <div class="tc-body"><p class="tc-desc">文字を入力すると1文字ずつ爆発して飛び散る。タイピング破壊衝動。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://shiritori-machine-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🔗</div><div class="tc-meta"><div class="tc-title">しりとりマシン</div><div class="tc-subtitle">CPUとしりとり対決</div></div></div>
+        <div class="tc-body"><p class="tc-desc">コンピュータとしりとり。「ん」で終わったら負け。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kaidan-counter-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🪜</div><div class="tc-meta"><div class="tc-title">階段カウンター</div><div class="tc-subtitle">スクロールで階段を登る</div></div></div>
+        <div class="tc-body"><p class="tc-desc">スクロールで仮想階段を登る。東京タワーやスカイツリーの高さに挑戦。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://uso-news-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">📰</div><div class="tc-meta"><div class="tc-title">うそニュース</div><div class="tc-subtitle">絶対ありえないニュース</div></div></div>
+        <div class="tc-body"><p class="tc-desc">「猫が自我に目覚めた」「おにぎりが通貨に」など嘘ニュースを自動生成。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://emoji-gacha-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🎰</div><div class="tc-meta"><div class="tc-title">絵文字ガチャ</div><div class="tc-subtitle">スロットで絵文字3連</div></div></div>
+        <div class="tc-body"><p class="tc-desc">絵文字スロットマシン。3つ揃えばレア。コレクション要素あり。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://nanbyou-ikita-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">⏰</div><div class="tc-meta"><div class="tc-title">何秒生きた？</div><div class="tc-subtitle">生存秒数リアルタイム表示</div></div></div>
+        <div class="tc-body"><p class="tc-desc">誕生日から何秒生きたかリアルタイム表示。心臓の鼓動回数も。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://mienai-button-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">🔍</div><div class="tc-meta"><div class="tc-title">見えないボタン</div><div class="tc-subtitle">見えないボタンを探せ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">画面上の見えないボタンを近接インジケータで探すゲーム。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://nichiyou-check-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">📅</div><div class="tc-meta"><div class="tc-title">今日日曜？</div><div class="tc-subtitle">日曜日かどうかだけ判定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">今日が日曜日かどうかだけを教えてくれるサイト。それだけ。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://cursor-trail-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🎨</div><div class="tc-meta"><div class="tc-title">カーソルの軌跡</div><div class="tc-subtitle">マウスで虹色お絵描き</div></div></div>
+        <div class="tc-body"><p class="tc-desc">マウスを動かすだけで虹色のアートが描ける。3つのモード切替。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://gravity-text-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">🪨</div><div class="tc-meta"><div class="tc-title">重力テキスト</div><div class="tc-subtitle">文字が重力で落下</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキストを入力すると文字が重力で落下してバウンド。物理演算。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://osoi-site-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🐌</div><div class="tc-meta"><div class="tc-title">世界一遅いサイト</div><div class="tc-subtitle">わざと遅いローディング</div></div></div>
+        <div class="tc-body"><p class="tc-desc">読み込みが遅すぎるサイト。進捗メッセージが面白い。100%になっても何もない。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://doyagao-maker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">😏</div><div class="tc-meta"><div class="tc-title">ドヤ顔メーカー</div><div class="tc-subtitle">ドヤ顔を組み立てる</div></div></div>
+        <div class="tc-body"><p class="tc-desc">顔文字パーツとフレームと台詞を組み合わせてドヤ顔を作る。コピー可能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 知識・まとめ (6) -->
+  <div class="cat-section" data-cat-section="knowledge">
+    <div class="cat-label"><span>📚</span> 知識・まとめ</div>
+    <div class="tools-grid">
+      <a href="https://meigen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">📜</div><div class="tc-meta"><div class="tc-title">名言まとめ</div><div class="tc-subtitle">偉人の名言を検索</div></div></div>
+        <div class="tc-body"><p class="tc-desc">世界の偉人・著名人の名言100以上収録。カテゴリ別検索、ランダム表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://zatsugaku-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-yellow">
+        <div class="tc-header"><div class="tc-icon">🎓</div><div class="tc-meta"><div class="tc-title">雑学サイト</div><div class="tc-subtitle">ランダム雑学を表示</div></div></div>
+        <div class="tc-body"><p class="tc-desc">知って得する雑学をランダム表示。カテゴリ別フィルター付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://meisaku-copy-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">✍️</div><div class="tc-meta"><div class="tc-title">名作コピー集</div><div class="tc-subtitle">広告コピーを検索・閲覧</div></div></div>
+        <div class="tc-body"><p class="tc-desc">「そうだ 京都、行こう。」など心に残る名作広告コピー25本以上を収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://bi-matome-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">💰</div><div class="tc-meta"><div class="tc-title">ベーシックインカムまとめ</div><div class="tc-subtitle">各国の制度・議論</div></div></div>
+        <div class="tc-body"><p class="tc-desc">フィンランド・カナダ・ケニアなど世界の実験事例と日本での議論を整理。財源シミュレーター付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://morioka-watch-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">👤</div><div class="tc-meta"><div class="tc-title">森岡毅ウォッチ</div><div class="tc-subtitle">動向・発言まとめ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">USJ V字回復の立役者・森岡毅のキャリア年表、名言、著書をまとめて閲覧。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://diet-search-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🏛️</div><div class="tc-meta"><div class="tc-title">衆議院勢力図</div><div class="tc-subtitle">議席分布・議員検索</div></div></div>
+        <div class="tc-body"><p class="tc-desc">衆議院の勢力図をグラフ表示。政党別議席数、議員検索、選挙区フィルター対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://itsusan558.github.io/cosmic-scale/" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">🌌</div><div class="tc-meta"><div class="tc-title">宇宙スケール比較</div><div class="tc-subtitle">You Are Nothing</div></div></div>
+        <div class="tc-body"><p class="tc-desc">あなたの身長1.7mから観測可能な宇宙930億光年まで。8段階のスケール比較で自分の小ささを体感。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ビジネス (5) -->
+  <div class="cat-section" data-cat-section="biz">
+    <div class="cat-label"><span>💼</span> ビジネス</div>
+    <div class="tools-grid">
+      <a href="https://honne-biz-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🏢</div><div class="tc-meta"><div class="tc-title">本音→ビジネス用語変換</div><div class="tc-subtitle">本音を丁寧に</div></div></div>
+        <div class="tc-body"><p class="tc-desc">「それ無理」→「スケジュール的に厳しい状況です」。40パターン以上収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://marketing-cases-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">📈</div><div class="tc-meta"><div class="tc-title">マーケティング事例集</div><div class="tc-subtitle">成功事例を検索</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ユニクロ・スターバックス・メルカリなど国内外の成功事例を20件以上収録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://heikin-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">📊</div><div class="tc-meta"><div class="tc-title">平均算出アプリ</div><div class="tc-subtitle">年齢・学歴→年収等</div></div></div>
+        <div class="tc-body"><p class="tc-desc">年齢・性別・学歴・地域から統計的な平均年収・貯蓄額・結婚率を算出。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://ima-ikura-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">💹</div><div class="tc-meta"><div class="tc-title">今いくらアプリ</div><div class="tc-subtitle">昔の金額→現代価値</div></div></div>
+        <div class="tc-body"><p class="tc-desc">戦前から令和まで対応。海外通貨（USD/EUR/GBP/CNY）にも対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://koyou-hoken-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">💼</div><div class="tc-meta"><div class="tc-title">雇用保険給付金計算</div><div class="tc-subtitle">失業手当シミュレーター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">離職理由・年齢・勤続年数・給与から基本手当の受給額・期間を計算。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://overtime-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">⏰</div><div class="tc-meta"><div class="tc-title">残業代計算機</div><div class="tc-subtitle">基本給から残業代を計算</div></div></div>
+        <div class="tc-body"><p class="tc-desc">月給・時間外労働時間から残業代を計算。深夜・休日割増率にも対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://yukyu-calc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🏖️</div><div class="tc-meta"><div class="tc-title">有給休暇計算機</div><div class="tc-subtitle">勤続年数から付与日数</div></div></div>
+        <div class="tc-body"><p class="tc-desc">入社日から有給休暇の付与日数・残日数を計算。パート・アルバイトの比例付与にも対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://invoice-maker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">📋</div><div class="tc-meta"><div class="tc-title">請求書メーカー</div><div class="tc-subtitle">ブラウザで請求書作成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">品目・単価を入力してプロな請求書を作成。PDF印刷対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://meishi-maker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🪪</div><div class="tc-meta"><div class="tc-title">名刺テンプレート</div><div class="tc-subtitle">ブラウザで名刺作成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">シンプルな名刺をブラウザ内で作成。テンプレート選択・印刷対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://gijiroku-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">📝</div><div class="tc-meta"><div class="tc-title">議事録テンプレート</div><div class="tc-subtitle">会議メモフォーマット</div></div></div>
+        <div class="tc-body"><p class="tc-desc">議事録を自動生成。日時・参加者・議題・決定事項を整理。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://biz-mail-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">✉️</div><div class="tc-meta"><div class="tc-title">ビジネスメール文例集</div><div class="tc-subtitle">シーン別テンプレート</div></div></div>
+        <div class="tc-body"><p class="tc-desc">お礼・お詫び・依頼・断りなど50以上の文例集。コピー機能付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://taishokukin-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">💰</div><div class="tc-meta"><div class="tc-title">退職金シミュレーター</div><div class="tc-subtitle">勤続年数・退職理由別</div></div></div>
+        <div class="tc-body"><p class="tc-desc">勤続年数・退職理由・月給から退職金の目安を計算。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://x-analyzer-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">📊</div><div class="tc-meta"><div class="tc-title">X(Twitter)分析</div><div class="tc-subtitle">投稿データを分析</div></div></div>
+        <div class="tc-body"><p class="tc-desc">投稿テキストを貼り付けてエンゲージメント・ハッシュタグ・ワード傾向を分析。API不要。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://insta-analyzer-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">📸</div><div class="tc-meta"><div class="tc-title">Instagram分析</div><div class="tc-subtitle">アカウント健康度チェック</div></div></div>
+        <div class="tc-body"><p class="tc-desc">フォロワー数・投稿データを入力してエンゲージメント率・成長戦略を提案。API不要。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://receipt-maker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">🧾</div><div class="tc-meta"><div class="tc-title">領収書作成</div><div class="tc-subtitle">印刷可能な領収書</div></div></div>
+        <div class="tc-body"><p class="tc-desc">日本式領収書を作成。品目追加・税率設定・印鑑スタンプ付き。印刷/PDF対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 画像 (2) -->
+  <div class="cat-section" data-cat-section="image">
+    <div class="cat-label"><span>🖼️</span> 画像</div>
+    <div class="tools-grid">
+      <a href="https://image-crop-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">✂️</div><div class="tc-meta"><div class="tc-title">画像クロップ</div><div class="tc-subtitle">ブラウザで画像切り抜き</div></div></div>
+        <div class="tc-body"><p class="tc-desc">縦横幅指定、アスペクト比固定に対応。データはサーバーに送信されません。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://rakugaki-ai-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🎨</div><div class="tc-meta"><div class="tc-title">落書き→名画風変換</div><div class="tc-subtitle">お絵描きをアートに</div></div></div>
+        <div class="tc-body"><p class="tc-desc">落書きを油絵・水彩・ドット絵・ネオンなど6スタイルに変換。ダウンロード可能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    
+      <a href="https://image-resize-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🖼️</div><div class="tc-meta"><div class="tc-title">画像リサイズ</div><div class="tc-subtitle">ブラウザ内でリサイズ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">画像をブラウザ内でリサイズ。幅・高さ指定、アスペクト比維持対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://image-compress-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">📸</div><div class="tc-meta"><div class="tc-title">画像圧縮</div><div class="tc-subtitle">ファイルサイズ削減</div></div></div>
+        <div class="tc-body"><p class="tc-desc">JPEG・PNG画像をブラウザ内で圧縮。画質調整スライダー付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://favicon-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">⭐</div><div class="tc-meta"><div class="tc-title">favicon生成</div><div class="tc-subtitle">テキスト→favicon</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキストや絵文字からfaviconを生成。PNG形式でダウンロード。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://gradient-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🌈</div><div class="tc-meta"><div class="tc-title">グラデーション生成</div><div class="tc-subtitle">CSSグラデーション作成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">線形・放射・円錐グラデーションを作成。16プリセット、角度調整、CSSコードコピー。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://color-palette-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🎨</div><div class="tc-meta"><div class="tc-title">カラーパレット</div><div class="tc-subtitle">配色ジェネレーター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">HSL色調和でパレット生成。類似・補色・トライアド等6モード。CSS/Tailwind出力。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://ascii-art-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">🔤</div><div class="tc-meta"><div class="tc-title">ASCIIアート変換</div><div class="tc-subtitle">画像→テキストアート</div></div></div>
+        <div class="tc-body"><p class="tc-desc">画像をASCII文字アートに変換。幅・文字セット調整・テキストコピー対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 暮らし・便利 (4) -->
+  <div class="cat-section" data-cat-section="living">
+    <div class="cat-label"><span>🏥</span> 健康・暮らし</div>
+    <div class="tools-grid">
+      <a href="https://denshi-range-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">📡</div><div class="tc-meta"><div class="tc-title">電子レンジOK判定</div><div class="tc-subtitle">これチンできる？</div></div></div>
+        <div class="tc-body"><p class="tc-desc">食品・容器・素材が電子レンジに入れていいか判定。安全にチンするためのガイド。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://tsubo-navi-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">💆</div><div class="tc-meta"><div class="tc-title">ツボ⇔症状ナビ</div><div class="tc-subtitle">不調→ツボを検索</div></div></div>
+        <div class="tc-body"><p class="tc-desc">頭痛・肩こり・腰痛など症状からツボを検索。ツボから効果を知る逆引きも。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://smoking-finder-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-gray">
+        <div class="tc-header"><div class="tc-icon">🚬</div><div class="tc-meta"><div class="tc-title">喫煙所ファインダー</div><div class="tc-subtitle">主要エリアの喫煙所</div></div></div>
+        <div class="tc-body"><p class="tc-desc">東京主要エリアの喫煙所情報。屋内/屋外、最寄り駅からのアクセス付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://recipe-save-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🍳</div><div class="tc-meta"><div class="tc-title">レシピ保存ツール</div><div class="tc-subtitle">お気に入りレシピ管理</div></div></div>
+        <div class="tc-body"><p class="tc-desc">レシピをブラウザに保存・管理。カテゴリ分け・検索機能付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- コミュニティ (4) -->
+  <div class="cat-section" data-cat-section="community">
+    <div class="cat-label"><span>👥</span> コミュニティ</div>
+    <div class="tools-grid">
+      <a href="https://iikoto-log-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-yellow">
+        <div class="tc-header"><div class="tc-icon">⭐</div><div class="tc-meta"><div class="tc-title">いいこと記録</div><div class="tc-subtitle">善行を記録・振り返り</div></div></div>
+        <div class="tc-body"><p class="tc-desc">日々の小さな善行を記録。自己肯定感アップ。カレンダー表示で振り返り。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://zange-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-dark">
+        <div class="tc-header"><div class="tc-icon">🙏</div><div class="tc-meta"><div class="tc-title">懺悔室</div><div class="tc-subtitle">匿名で懺悔を書ける</div></div></div>
+        <div class="tc-body"><p class="tc-desc">懺悔を書くと赦しの言葉が返ってくる。データはブラウザにのみ保存。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://bokin-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">💝</div><div class="tc-meta"><div class="tc-title">募金ガイド</div><div class="tc-subtitle">信頼できる寄付先まとめ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">日本赤十字・国境なき医師団など信頼できる寄付先をカテゴリ別に紹介。税控除情報付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://basho-map-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">🗺️</div><div class="tc-meta"><div class="tc-title">行った場所マップ</div><div class="tc-subtitle">都道府県の訪問記録</div></div></div>
+        <div class="tc-body"><p class="tc-desc">47都道府県の訪問記録を管理。制覇率表示・訪問ログ・メモ機能付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- SNS・クリエイティブ (2) -->
+  <div class="cat-section" data-cat-section="entertain">
+    <div class="cat-label"><span>📱</span> SNS・クリエイティブ</div>
+    <div class="tools-grid">
+      <a href="https://buzz-x-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🔥</div><div class="tc-meta"><div class="tc-title">バズ投稿分析・再現</div><div class="tc-subtitle">Xでバズるポストを研究</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ポストのバズ度を100点満点で分析。8つのバズパターン＆テンプレート付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://chara-sheet-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">📝</div><div class="tc-meta"><div class="tc-title">キャラ設定シート</div><div class="tc-subtitle">荒木式身辺調査表</div></div></div>
+        <div class="tc-body"><p class="tc-desc">荒木飛呂彦式の身辺調査表でキャラクターを管理。複数キャラ切り替え対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  
+  <!-- 学習・教育 (6) -->
+  <div class="cat-section" data-cat-section="learn">
+    <div class="cat-label"><span>🎓</span> 学習・教育</div>
+    <div class="tools-grid">
+      <a href="https://kuku-train-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🔢</div><div class="tc-meta"><div class="tc-title">九九トレーニング</div><div class="tc-subtitle">タイムアタック形式</div></div></div>
+        <div class="tc-body"><p class="tc-desc">九九のタイムアタック。ランダム出題・正答率記録。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://todofuken-quiz-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🗾</div><div class="tc-meta"><div class="tc-title">都道府県クイズ</div><div class="tc-subtitle">県庁所在地を当てよう</div></div></div>
+        <div class="tc-body"><p class="tc-desc">都道府県の県庁所在地をクイズ形式で出題。全47問。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://yojijukugo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">📚</div><div class="tc-meta"><div class="tc-title">四字熟語辞典</div><div class="tc-subtitle">意味・用例付き検索</div></div></div>
+        <div class="tc-body"><p class="tc-desc">四字熟語を収録。意味・読み方をわかりやすく解説。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://kotowaza-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">📖</div><div class="tc-meta"><div class="tc-title">ことわざ辞典</div><div class="tc-subtitle">検索・ランダム表示</div></div></div>
+        <div class="tc-body"><p class="tc-desc">日本のことわざ・慣用句を収録。五十音順検索対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://typing-game-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">⌨️</div><div class="tc-meta"><div class="tc-title">タイピング練習</div><div class="tc-subtitle">日本語タイピング速度測定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">タイピング速度を測定。苦手キー分析付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://keisan-drill-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">🧮</div><div class="tc-meta"><div class="tc-title">計算ドリル</div><div class="tc-subtitle">小学生向け四則演算</div></div></div>
+        <div class="tc-body"><p class="tc-desc">足し算・引き算・掛け算のドリル。難易度設定・採点機能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://flashcard-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">📚</div><div class="tc-meta"><div class="tc-title">フラッシュカード</div><div class="tc-subtitle">暗記学習ツール</div></div></div>
+        <div class="tc-body"><p class="tc-desc">デッキ別のフラッシュカード。3段階評価で学習進捗を管理。カード作成・共有可能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://typing-speed-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">⌨️</div><div class="tc-meta"><div class="tc-title">タイピング速度テスト</div><div class="tc-subtitle">WPM測定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">英語・日本語のタイピング速度を測定。30/60/120秒モード、リアルタイム精度表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://life-counter-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">⏳</div><div class="tc-meta"><div class="tc-title">人生の残り時間</div><div class="tc-subtitle">人生を可視化</div></div></div>
+        <div class="tc-body"><p class="tc-desc">生年月日から残りの日数・週数を計算。週グリッド表示でライフイベントを可視化。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://pomodoro-timer-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🍅</div><div class="tc-meta"><div class="tc-title">ポモドーロタイマー</div><div class="tc-subtitle">集中力管理</div></div></div>
+        <div class="tc-body"><p class="tc-desc">25分作業+5分休憩のポモドーロテクニック。セッション記録・カスタム時間設定。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://habit-tracker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">✅</div><div class="tc-meta"><div class="tc-title">習慣トラッカー</div><div class="tc-subtitle">毎日の習慣を記録</div></div></div>
+        <div class="tc-body"><p class="tc-desc">毎日の習慣をチェックリストで管理。連続達成日数・完了率グラフで習慣化をサポート。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://mood-journal-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">😊</div><div class="tc-meta"><div class="tc-title">気分ジャーナル</div><div class="tc-subtitle">毎日の気分を記録</div></div></div>
+        <div class="tc-body"><p class="tc-desc">5段階の気分と日記を記録。月間カレンダー表示・気分の傾向分析でセルフケア。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+
+      <a href="https://aegi-pc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">💻</div><div class="tc-meta"><div class="tc-title">あえぎPC</div><div class="tc-subtitle">叩くとあえぐパソコン</div></div></div>
+        <div class="tc-body"><p class="tc-desc">PCを叩くと喘ぐジョークアプリ。6段階エスカレーション。実録音声搭載。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+
+      <a href="https://slap-phone-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">📱</div><div class="tc-meta"><div class="tc-title">SlapPhone</div><div class="tc-subtitle">iPhone版あえぎPC</div></div></div>
+        <div class="tc-body"><p class="tc-desc">iPhoneを机に置いて叩くとあえぐ。加速度センサーで衝撃検知。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+
+      <a href="https://eternal-fart-stairs-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">💨</div><div class="tc-meta"><div class="tc-title">無限おなら階段</div><div class="tc-subtitle">ドレミファソラシドで屁</div></div></div>
+        <div class="tc-body"><p class="tc-desc">6階建ての階段を登るとおならが音階で鳴る。Web Audio API合成。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://sakura-game-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">🌸</div><div class="tc-meta"><div class="tc-title">桜ぐるぐる体験</div><div class="tc-subtitle">花びらが舞い散る</div></div></div>
+        <div class="tc-body"><p class="tc-desc">スワイプで風を起こして桜の花びらを舞わせよう。4つの風モードで花吹雪体験。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://building-fight-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-red">
+        <div class="tc-header"><div class="tc-icon">🏗️</div><div class="tc-meta"><div class="tc-title">建物バトル</div><div class="tc-subtitle">日本の建物が殴り合う</div></div></div>
+        <div class="tc-body"><p class="tc-desc">東京タワー vs スカイツリー！日本の有名建物8体でターン制格闘。CPU対戦あり。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://info-shobaiya-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🕵️</div><div class="tc-meta"><div class="tc-title">情報商材屋判別</div><div class="tc-subtitle">あのポストは商材屋？</div></div></div>
+        <div class="tc-body"><p class="tc-desc">SNS投稿のテキストを12項目でチェック。情報商材屋度をメーターで判定するジョーク。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://dj-app-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🎧</div><div class="tc-meta"><div class="tc-title">DJ App</div><div class="tc-subtitle">YouTube 2デッキミックス</div></div></div>
+        <div class="tc-body"><p class="tc-desc">YouTube動画を2デッキでDJプレイ。クロスフェーダー、BPMタップ、エフェクト搭載。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://music-visualizer-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🎵</div><div class="tc-meta"><div class="tc-title">音楽ビジュアライザー</div><div class="tc-subtitle">音を可視化</div></div></div>
+        <div class="tc-body"><p class="tc-desc">音楽ファイルやマイク入力を4種類のビジュアルで可視化。バー・ウェーブ・サークル・パーティクル。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://spin-wheel-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🎡</div><div class="tc-meta"><div class="tc-title">ルーレット</div><div class="tc-subtitle">回転ホイールで決定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">項目を自由に設定してルーレットを回そう。結果を視覚的に決定するスピンホイール。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://bingo-maker-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">🎯</div><div class="tc-meta"><div class="tc-title">ビンゴメーカー</div><div class="tc-subtitle">ビンゴカード生成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">ビンゴカードの生成と番号抽選。パーティや宴会で盛り上がるビンゴマシン。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://reaction-test-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">⚡</div><div class="tc-meta"><div class="tc-title">反射神経テスト</div><div class="tc-subtitle">反応速度を測定</div></div></div>
+        <div class="tc-body"><p class="tc-desc">色が変わった瞬間にクリック！反応速度をミリ秒で測定。5回の平均値で判定。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://meme-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">😂</div><div class="tc-meta"><div class="tc-title">ミームジェネレーター</div><div class="tc-subtitle">画像にテキスト追加</div></div></div>
+        <div class="tc-body"><p class="tc-desc">画像にミームテキストを追加。Impactフォント、色・サイズ調整、テンプレート付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://pixel-art-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">🎨</div><div class="tc-meta"><div class="tc-title">ピクセルアート</div><div class="tc-subtitle">ドット絵エディター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">グリッド上でドット絵を描画。カラーパレット・消しゴム・塗りつぶし・PNG保存対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://lofi-player-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🎶</div><div class="tc-meta"><div class="tc-title">Lo-Fi音楽プレイヤー</div><div class="tc-subtitle">チルな音楽を生成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">Web Audio APIで生成するLo-Fiサウンド。5ジャンル対応。作業BGMに最適。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://morse-code-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">📡</div><div class="tc-meta"><div class="tc-title">モールス信号</div><div class="tc-subtitle">変換・再生ツール</div></div></div>
+        <div class="tc-body"><p class="tc-desc">テキストをモールス信号に変換。音声再生・光信号・デコード対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://white-noise-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🌧️</div><div class="tc-meta"><div class="tc-title">ホワイトノイズ</div><div class="tc-subtitle">環境音ジェネレーター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">雨・波・焚き火など12種のアンビエント音。ミックス調整・スリープタイマー付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
 
   <!-- Features -->
   <div class="section">
-    <div class="section-head">
-      <h2>すべてのツールの共通設計</h2>
-    </div>
+    <div class="section-head"><h2>すべてのツールの共通設計</h2></div>
     <div class="features">
-      <div class="feature">
-        <span class="f-icon">🔒</span>
-        <div class="f-title">プライバシー保護</div>
-        <div class="f-desc">入力データはブラウザ内で処理。サーバーに一切送信されません。安心して個人情報を含むデータも処理できます。</div>
-      </div>
-      <div class="feature">
-        <span class="f-icon">📱</span>
-        <div class="f-title">スマホ対応</div>
-        <div class="f-desc">PC・スマホ・タブレットすべてに最適化。いつでもどこでもサッと使えるレスポンシブ設計。</div>
-      </div>
-      <div class="feature">
-        <span class="f-icon">⚡</span>
-        <div class="f-title">インストール不要</div>
-        <div class="f-desc">URLを開くだけ。アカウント登録もアプリインストールも不要。完全無料で永久に使えます。</div>
-      </div>
+      <div class="feature"><span class="f-icon">🔒</span><div class="f-title">プライバシー保護</div><div class="f-desc">入力データはブラウザ内で処理。サーバーに一切送信されません。</div></div>
+      <div class="feature"><span class="f-icon">📱</span><div class="f-title">スマホ対応</div><div class="f-desc">PC・スマホ・タブレットすべてに最適化。レスポンシブ設計。</div></div>
+      <div class="feature"><span class="f-icon">⚡</span><div class="f-title">インストール不要</div><div class="f-desc">URLを開くだけ。アカウント登録もアプリインストールも不要。完全無料。</div></div>
     </div>
+  </div>
+
+  <!-- 人気ランキング -->
+  <div class="section" id="ranking">
+    <div class="section-head"><h2>🏆 人気ツールランキング</h2><p>よく使われているツール TOP6</p></div>
+    <div class="ranking-grid">
+      <a href="https://mojicount-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue" style="position:relative">
+        <div class="rank-badge rank-1">1</div>
+        <div class="tc-header"><div class="tc-icon">📝</div><div class="tc-meta"><div class="tc-title">もじカウント</div><div class="tc-subtitle">文字数カウンター</div></div></div>
+        <div class="tc-body"><p class="tc-desc">7つのSNS文字数制限に対応。ひらがな・カタカナ・漢字の内訳、読了時間も表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://zenkaku-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple" style="position:relative">
+        <div class="rank-badge rank-2">2</div>
+        <div class="tc-header"><div class="tc-icon">🔄</div><div class="tc-meta"><div class="tc-title">全角⇔半角変換</div><div class="tc-subtitle">ワンクリック変換</div></div></div>
+        <div class="tc-body"><p class="tc-desc">英数字・カタカナ・記号に対応。変換箇所はハイライト表示で一目瞭然。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://aegi-pc-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose" style="position:relative">
+        <div class="rank-badge rank-3">3</div>
+        <div class="tc-header"><div class="tc-icon">💻</div><div class="tc-meta"><div class="tc-title">あえぎPC</div><div class="tc-subtitle">叩くとあえぐパソコン</div></div></div>
+        <div class="tc-body"><p class="tc-desc">PCを叩くと喘ぐジョークアプリ。6段階エスカレーション。実録音声搭載。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://nengo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange" style="position:relative">
+        <div class="tc-header"><div class="tc-icon">📅</div><div class="tc-meta"><div class="tc-title">元号変換</div><div class="tc-subtitle">和暦⇔西暦</div></div></div>
+        <div class="tc-body"><p class="tc-desc">明治〜令和まで対応。年齢計算・干支・早見表つき。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://keigo-check-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green" style="position:relative">
+        <div class="tc-header"><div class="tc-icon">🎌</div><div class="tc-meta"><div class="tc-title">敬語チェッカー</div><div class="tc-subtitle">ビジネスメール校正</div></div></div>
+        <div class="tc-body"><p class="tc-desc">メールの敬語をチェック。二重敬語・誤用を指摘して正しい表現を提案。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://eternal-fart-stairs-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose" style="position:relative">
+        <div class="tc-header"><div class="tc-icon">💨</div><div class="tc-meta"><div class="tc-title">無限おなら階段</div><div class="tc-subtitle">ドレミファソラシドで屁</div></div></div>
+        <div class="tc-body"><p class="tc-desc">6階建ての階段を登るとおならが音階で鳴る。Web Audio API合成。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- リクエストFAB -->
+<div class="request-fab">
+  <button class="request-fab-btn" id="requestFabBtn">💡 アプリリクエスト</button>
+  <div class="request-panel" id="requestPanel">
+    <div class="rp-head">
+      <span>💡 こんなアプリが欲しい！</span>
+      <button class="rp-close" id="requestClose">✕</button>
+    </div>
+    <div class="rp-body" id="requestBody">
+      <textarea id="requestText" placeholder="こんなツールがあったら便利！というアイデアを自由に書いてください。&#10;&#10;例：PDFを結合できるツール"></textarea>
+      <div class="rp-hint">※ いただいたリクエストは開発の参考にさせていただきます</div>
+      <button class="rp-submit" id="requestSubmit">送信する</button>
+    </div>
+    <div class="rp-thanks" id="requestThanks">✅ リクエストありがとうございます！<br>開発の参考にさせていただきます。</div>
   </div>
 </div>
 
 <footer class="footer">
-  日本語ツール集 v1.1.0<br>
+  日本語ツール集 v3.2.0<br>
   すべてのツールはオープンソースです<br>
-  <a href="https://github.com/itsusan558">GitHub</a>
+  <a href="https://github.com/itsusan558">GitHub</a> ・ <a href="https://x.com/everevanev6601">𝕏</a> ・ <a href="https://note.com/tasty_mimosa406">note</a>
 </footer>
+
+<script>
+// カテゴリフィルタ
+const btns = document.querySelectorAll('.filter-btn');
+const sections = document.querySelectorAll('.cat-section');
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    sections.forEach(sec => {
+      sec.style.display = (cat === 'all' || sec.dataset.catSection === cat) ? '' : 'none';
+    });
+    // 検索をクリア
+    searchInput.value = '';
+    searchClear.style.display = 'none';
+    searchCount.style.display = 'none';
+    document.querySelectorAll('.tool-card').forEach(c => c.style.display = '');
+  });
+});
+
+// 検索
+const searchInput = document.getElementById('searchInput');
+const searchClear = document.getElementById('searchClear');
+const searchCount = document.getElementById('searchCount');
+const allCards = document.querySelectorAll('.cat-section .tool-card');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  searchClear.style.display = q ? 'block' : 'none';
+
+  if (!q) {
+    searchCount.style.display = 'none';
+    allCards.forEach(c => c.style.display = '');
+    sections.forEach(s => s.style.display = '');
+    return;
+  }
+
+  // すべてのカテゴリを表示
+  btns.forEach(b => b.classList.remove('active'));
+  btns[0].classList.add('active');
+  sections.forEach(s => s.style.display = '');
+
+  let count = 0;
+  allCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const match = q.split(/\s+/).every(w => text.includes(w));
+    card.style.display = match ? '' : 'none';
+    if (match) count++;
+  });
+
+  searchCount.style.display = 'block';
+  searchCount.textContent = count > 0 ? `${count}件のツールが見つかりました` : '見つかりませんでした';
+});
+
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  searchInput.dispatchEvent(new Event('input'));
+  searchInput.focus();
+});
+
+// リクエストFAB
+const requestFabBtn = document.getElementById('requestFabBtn');
+const requestPanel = document.getElementById('requestPanel');
+const requestClose = document.getElementById('requestClose');
+const requestSubmit = document.getElementById('requestSubmit');
+const requestText = document.getElementById('requestText');
+const requestBody = document.getElementById('requestBody');
+const requestThanks = document.getElementById('requestThanks');
+
+requestFabBtn.addEventListener('click', () => {
+  requestPanel.classList.toggle('open');
+});
+requestClose.addEventListener('click', () => {
+  requestPanel.classList.remove('open');
+});
+requestSubmit.addEventListener('click', () => {
+  const text = requestText.value.trim();
+  if (!text) return;
+  // LocalStorageに保存
+  const requests = JSON.parse(localStorage.getItem('jp-portal-requests') || '[]');
+  requests.push({ text, date: new Date().toISOString() });
+  localStorage.setItem('jp-portal-requests', JSON.stringify(requests));
+  requestBody.style.display = 'none';
+  requestThanks.style.display = 'block';
+  setTimeout(() => {
+    requestBody.style.display = '';
+    requestThanks.style.display = 'none';
+    requestText.value = '';
+    requestPanel.classList.remove('open');
+  }, 2500);
+});
+</script>
 
 </body>
 </html>
