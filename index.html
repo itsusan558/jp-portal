@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日本語ツール集｜JP Tools Portal</title>
-<meta name="description" content="日本で暮らす人のための無料ウェブツール集。187個のツールを公開中。すべてブラウザ完結・データ送信なし。">
+<meta name="description" content="日本で暮らす人のための無料ウェブツール集。200個のツールを公開中。すべてブラウザ完結・データ送信なし。">
 <meta property="og:title" content="日本語ツール集｜JP Tools Portal">
-<meta property="og:description" content="187個の無料ウェブツール公開中。すべてブラウザ完結・登録不要。">
+<meta property="og:description" content="200個の無料ウェブツール公開中。すべてブラウザ完結・登録不要。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇯🇵</text></svg>">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap');
@@ -82,12 +82,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   padding:9px 22px;font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;
   transition:all var(--ease);font-family:var(--font);position:relative;overflow:hidden
 }
-.filter-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--purple));opacity:0;transition:opacity var(--ease);border-radius:100px}
 .filter-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(59,130,246,0.1)}
-.filter-btn.active{border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(59,130,246,0.3)}
-.filter-btn.active::before{opacity:1}
-.filter-btn{position:relative;z-index:0}
-.filter-btn.active{z-index:0}
+.filter-btn.active{background:linear-gradient(135deg,var(--accent),var(--purple));border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(59,130,246,0.3)}
 
 /* ========== CATEGORIES ========== */
 .cat-section{margin-top:48px}
@@ -289,7 +285,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat"><div class="s-num">187</div><div class="s-label">公開中のツール</div></div>
+    <div class="stat"><div class="s-num">200</div><div class="s-label">公開中のツール</div></div>
     <div class="stat"><div class="s-num">0円</div><div class="s-label">完全無料</div></div>
     <div class="stat"><div class="s-num">1000</div><div class="s-label">目標ツール数</div></div>
   </div>
@@ -309,7 +305,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   <button class="filter-btn" data-cat="image">画像</button>
   <button class="filter-btn" data-cat="biz">ビジネス</button>
   <button class="filter-btn" data-cat="learn">学習</button>
-  <button class="filter-btn" data-cat="community">コミュニティ</button>
+  <button class="filter-btn" data-cat="community">コミ���ニティ</button>
+  <button class="filter-btn" data-cat="dev">開発者ツール</button>
 </div>
 
 <div class="container">
@@ -699,6 +696,63 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       <a href="https://qr-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
         <div class="tc-header"><div class="tc-icon">📱</div><div class="tc-meta"><div class="tc-title">QRコード生成</div><div class="tc-subtitle">テキスト・URLをQR化</div></div></div>
         <div class="tc-body"><p class="tc-desc">テキスト・URL・Wi-Fi・連絡先をQRコードに変換。色・サイズ変更、PNG保存。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 開発者ツール (10) -->
+  <div class="cat-section" data-cat-section="dev">
+    <div class="cat-label"><span>💻</span> 開発者ツール</div>
+    <div class="tools-grid">
+      <a href="https://box-shadow-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🎨</div><div class="tc-meta"><div class="tc-title">ボックスシャドウ生成</div><div class="tc-subtitle">box-shadow GUI調��</div></div></div>
+        <div class="tc-body"><p class="tc-desc">スライダーでbox-shadowを調整。5種のプリセット、内側シャドウ対応。CSSコード即コピー。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://glass-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
+        <div class="tc-header"><div class="tc-icon">✨</div><div class="tc-meta"><div class="tc-title">ガラスモーフィズム生成</div><div class="tc-subtitle">すりガラスUI生成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">すりガラス風UIのCSS生成。backdrop-filter、ぼかし・透明度・ボーダーをリアルタイム調整。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://neumo-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-purple">
+        <div class="tc-header"><div class="tc-icon">🔘</div><div class="tc-meta"><div class="tc-title">ニューモーフィズム生成</div><div class="tc-subtitle">立体感ソフトUI</div></div></div>
+        <div class="tc-body"><p class="tc-desc">フラット・凹面・凸面・押下の4モード。ソフトUIのCSS生成。背景色・強度カスタマイズ。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://wave-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-blue">
+        <div class="tc-header"><div class="tc-icon">🌊</div><div class="tc-meta"><div class="tc-title">SVGウェーブ生成</div><div class="tc-subtitle">波形背景SVG生成</div></div></div>
+        <div class="tc-body"><p class="tc-desc">美しい波形SVG背景をランダム生成。波の数・振幅・複雑さ調整。SVGダウンロード対応。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://blob-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-pink">
+        <div class="tc-header"><div class="tc-icon">🫧</div><div class="tc-meta"><div class="tc-title">Blob生成</div><div class="tc-subtitle">有機的SVGシェイプ</div></div></div>
+        <div class="tc-body"><p class="tc-desc">有機的な丸いSVGシェイプをランダム生成。グラデーション対応。SVGコピー＆ダウンロード。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://grid-gen-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">����</div><div class="tc-meta"><div class="tc-title">CSSグリッド生成</div><div class="tc-subtitle">Gridレイアウト設計</div></div></div>
+        <div class="tc-body"><p class="tc-desc">CSS Gridレイアウトをビジュアル設計。列幅・行高カスタム、ギャップ調整。CSSコード出力。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://flexbox-play-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">📦</div><div class="tc-meta"><div class="tc-title">Flexboxプレイグラウンド</div><div class="tc-subtitle">Flexbox実験場</div></div></div>
+        <div class="tc-body"><p class="tc-desc">全Flexboxプロパティをリアルタイム実験。アイテム追加削除、CSSコード即コピー。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://code-snap-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-rose">
+        <div class="tc-header"><div class="tc-icon">📸</div><div class="tc-meta"><div class="tc-title">コードスクショ美化</div><div class="tc-subtitle">carbon.now.sh風</div></div></div>
+        <div class="tc-body"><p class="tc-desc">コードを美しい画像に変換。Dracula・Monokai等5テーマ、背景グラデ選択、PNG保存。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://jwt-decoder-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-amber">
+        <div class="tc-header"><div class="tc-icon">🔐</div><div class="tc-meta"><div class="tc-title">JWTデコーダー</div><div class="tc-subtitle">jwt.io風トークン分解</div></div></div>
+        <div class="tc-body"><p class="tc-desc">JWTトークンをヘッダー・ペイロードに分解。期限チェック、クレーム情報を日本語表示。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://cron-parser-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-green">
+        <div class="tc-header"><div class="tc-icon">⏰</div><div class="tc-meta"><div class="tc-title">Cron式パーサー</div><div class="tc-subtitle">crontab.guru風</div></div></div>
+        <div class="tc-body"><p class="tc-desc">cron式を日本語で解説。次の実行予定5件表示、プリセット8種、フィールド別入力対応。</p></div>
         <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
       </a>
     </div>
@@ -1172,10 +1226,15 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     </div>
   </div>
 
-  <!-- コミュニティ (4) -->
+  <!-- コミュニティ (5) -->
   <div class="cat-section" data-cat-section="community">
     <div class="cat-label"><span>👥</span> コミュニティ</div>
     <div class="tools-grid">
+      <a href="https://itsusan558.github.io/vending-map/" target="_blank" class="tool-card tc-emerald">
+        <div class="tc-header"><div class="tc-icon">🥤</div><div class="tc-meta"><div class="tc-title">自販機マップ</div><div class="tc-subtitle">自販機の分布を可視化</div></div></div>
+        <div class="tc-body"><p class="tc-desc">自販機の分布を地図上に可視化。種類別フィルターや時系列比較で増減も確認可能。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
       <a href="https://iikoto-log-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-yellow">
         <div class="tc-header"><div class="tc-icon">⭐</div><div class="tc-meta"><div class="tc-title">いいこと記録</div><div class="tc-subtitle">善行を記録・振り返り</div></div></div>
         <div class="tc-body"><p class="tc-desc">日々の小さな善行を記録。自己肯定感アップ。カレンダー表示で振り返り。</p></div>
@@ -1194,6 +1253,16 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       <a href="https://basho-map-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-cyan">
         <div class="tc-header"><div class="tc-icon">🗺️</div><div class="tc-meta"><div class="tc-title">行った場所マップ</div><div class="tc-subtitle">都道府県の訪問記録</div></div></div>
         <div class="tc-body"><p class="tc-desc">47都道府県の訪問記録を管理。制覇率表示・訪問ログ・メモ機能付き。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://bucket-list-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-orange">
+        <div class="tc-header"><div class="tc-icon">🪣</div><div class="tc-meta"><div class="tc-title">バケットリスト</div><div class="tc-subtitle">死ぬまでにやりたいこと</div></div></div>
+        <div class="tc-body"><p class="tc-desc">やりたいことを8カテゴリで管理。進捗バー、達成チェック、SNSシェア機能。データはブラウザ保存。</p></div>
+        <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      </a>
+      <a href="https://shiawase-memo-1053500313161.asia-northeast1.run.app" target="_blank" class="tool-card tc-pink">
+        <div class="tc-header"><div class="tc-icon">😊</div><div class="tc-meta"><div class="tc-title">幸せメモ</div><div class="tc-subtitle">幸せな瞬間を記録</div></div></div>
+        <div class="tc-body"><p class="tc-desc">いつ・どこで・なぜ幸せだったかを記録。カテゴリ別・時間帯別のアナリティクス付き。</p></div>
         <div class="tc-footer"><span class="tc-link">開く <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
       </a>
     </div>
